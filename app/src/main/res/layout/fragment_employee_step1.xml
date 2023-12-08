@@ -1,0 +1,979 @@
+<layout>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.workseasy.com.ui.hradmin.employeeRegistration.fragment.EmployeeStep1Fragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="Employee Name (As Per Aadhaar) "
+                    android:textColor="@color/textcolor" />
+
+                <EditText
+                    android:id="@+id/NameEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:background="@drawable/edit_bg"
+                    android:hint=" Enter Employee Name (As Per Aadhaar)"
+                    android:inputType="textCapCharacters"
+                    android:capitalize="characters"
+                    android:textAllCaps="true"
+                    android:textColorHint="@color/hintcolor"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/_14sdp"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/nameError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_22sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:text="*Please enter email address"
+                    android:textColor="#B51414"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:id="@+id/labelFatherName"
+                    android:text="Father Name"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/textcolor" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/FatherNameET"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:textAllCaps="true"
+                        android:capitalize="characters"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textColorHint="@color/hintcolor"
+                        android:background="@drawable/edit_bg"
+                        android:hint="Enter Father Name"
+                        android:inputType="textCapCharacters"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/_14sdp"
+                        android:textSize="@dimen/_10sdp"/>
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:layout_weight="4"
+                        android:id="@+id/isHusband"
+                        android:text="H"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:buttonTint="@color/purple_200"/>
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/fthernameError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_22sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:text="*Please enter email address"
+                    android:textColor="#B51414"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="DOB"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/textcolor" />
+                        <TextView
+                            android:id="@+id/Dobet"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:gravity="center_vertical"
+                            android:textColorHint="@color/hintcolor"
+                            android:drawableRight="@drawable/ic_path_92"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/edit_bg"
+                            android:hint="Enter DOB"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingLeft="@dimen/_14sdp"
+                            android:textSize="@dimen/_10sdp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Age"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/textcolor"/>
+                        <EditText
+                            android:id="@+id/etAge"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:textColorHint="@color/hintcolor"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/edit_bg"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:maxLength="3"
+                            android:paddingLeft="@dimen/_14sdp"
+                            android:textSize="@dimen/_10sdp"/>
+                        <TextView
+                            android:id="@+id/ageError"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="*Please enter age"
+                            android:textColor="#B51414"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Pay Code"
+                            android:id="@+id/paycodeTv"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/textcolor" />
+                        <EditText
+                            android:id="@+id/PayCodeET"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:background="@drawable/edit_bg"
+                            android:hint="Enter Pay Code"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:textSize="@dimen/_10sdp"
+                            android:paddingLeft="@dimen/_14sdp"
+                            android:paddingRight="@dimen/_5sdp"
+                            android:textColorHint="@color/hintcolor"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Gender"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/textcolor" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/edit_bg">
+                            <com.skydoves.powerspinner.PowerSpinnerView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_vertical"
+                                android:padding="10dp"
+                                android:hint="Select Gender"
+                                android:textColor="#858484"
+                                android:id="@+id/genderSpinner"
+                                android:textColorHint="#C8C5C5"
+                                android:textSize="@dimen/_10sdp"
+                                android:entries="@array/genderArray"
+                                app:spinner_arrow_gravity="end"
+                                app:spinner_arrow_padding="8dp"
+                                app:spinner_arrow_tint="@color/purple_200"
+                                app:spinner_divider_color="@color/purple_200"
+                                app:spinner_divider_show="true"
+                                app:spinner_divider_size="0.4dp"
+                                app:spinner_popup_animation="dropdown"
+                                app:spinner_popup_background="#fff"
+                                app:spinner_popup_elevation="14dp" />
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="*Please enter age"
+                            android:textColor="#B51414"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Department"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/textcolor" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edit_bg"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_toLeftOf="@id/noti_icon"
+                            android:layout_weight="1">
+
+                            <com.skydoves.powerspinner.PowerSpinnerView
+                                android:id="@+id/departSpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_vertical"
+                                android:hint="Select Department"
+                                android:padding="10dp"
+                                android:textColor="@color/textcolor"
+                                android:textColorHint="@color/hintcolor"
+                                android:textSize="12sp"
+                                app:spinner_arrow_gravity="end"
+                                app:spinner_arrow_padding="8dp"
+                                app:spinner_arrow_tint="@color/hintcolor"
+                                app:spinner_divider_show="true"
+                                app:spinner_divider_size="0.4dp"
+                                app:spinner_divider_color="@color/hintcolor"
+                                app:spinner_popup_background="@color/white"
+                                app:spinner_popup_animation="dropdown"
+                                app:spinner_popup_elevation="14dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Designation"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/textcolor" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edit_bg"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_toLeftOf="@id/noti_icon"
+                            android:layout_weight="1">
+
+                            <com.skydoves.powerspinner.PowerSpinnerView
+                                android:id="@+id/desigSpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_vertical"
+                                android:hint="Select Designation"
+                                android:padding="10dp"
+                                app:spinner_divider_color="@color/hintcolor"
+                                app:spinner_popup_background="@color/white"
+                                android:textColor="@color/textcolor"
+                                android:textColorHint="@color/hintcolor"
+                                android:textSize="12sp"
+                                app:spinner_arrow_gravity="end"
+                                app:spinner_arrow_padding="8dp"
+                                app:spinner_arrow_tint="@color/hintcolor"
+                                app:spinner_divider_show="true"
+                                app:spinner_divider_size="0.4dp"
+                                app:spinner_popup_animation="dropdown"
+                                app:spinner_popup_elevation="14dp" />
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="*Please enter age"
+                            android:textColor="#B51414"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_18sdp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="E-mail Id"
+                            android:visibility="gone"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/textcolor" />
+
+                        <EditText
+                            android:id="@+id/EmailEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColorHint="@color/hintcolor"
+                            android:background="@drawable/edit_bg"
+                            android:paddingRight="@dimen/_5sdp"
+                            android:hint="Enter e-mail id"
+                            android:visibility="gone"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingLeft="@dimen/_14sdp"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Pay Code"
+                            android:visibility="gone"
+                            android:textColor="@color/textcolor" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:background="@drawable/edit_bg"
+                            android:hint="Enter Pay Code"
+                            android:visibility="gone"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingLeft="@dimen/_14sdp"
+                            android:paddingRight="@dimen/_5sdp"
+                            android:textColorHint="@color/hintcolor"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Designation"
+                            android:visibility="gone"
+                            android:textColor="@color/textcolor" />
+
+                        <EditText
+
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColorHint="@color/hintcolor"
+                            android:background="@drawable/edit_bg"
+                            android:paddingRight="@dimen/_5sdp"
+                            android:visibility="gone"
+                            android:hint="Enter Designation"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingLeft="@dimen/_14sdp"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:visibility="gone"
+                            android:text="Department"
+                            android:textColor="@color/textcolor" />
+
+                        <EditText
+
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:visibility="gone"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColorHint="@color/hintcolor"
+                            android:background="@drawable/edit_bg"
+                            android:paddingRight="@dimen/_5sdp"
+                            android:hint="Enter Department"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingLeft="@dimen/_14sdp"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:id="@+id/emailError"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="*Please enter age"
+                            android:textColor="#B51414"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_18sdp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Mobile Number"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/textcolor" />
+
+                    <EditText
+                        android:id="@+id/PhoneEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_10sdp"
+                        android:textColorHint="@color/hintcolor"
+                        android:background="@drawable/edit_bg"
+                        android:hint="Enter mobile number"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/_14sdp" />
+                    <TextView
+                        android:id="@+id/mobileError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*Please enter age"
+                        android:textColor="#B51414"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="352dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Adhaar Number"
+                            android:textColor="@color/textcolor"
+                            android:textSize="@dimen/_12sdp" />
+                        <TextView
+                            android:id="@+id/AdhaarEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColorHint="@color/hintcolor"
+                            android:background="@drawable/edit_bg"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:hint="@string/adharhint"
+                            android:inputType="number"
+                            android:layout_gravity="center"
+                            android:gravity="center_vertical"
+                            android:clickable="false"
+                            android:editable="false"
+                            android:maxLines="1"
+                            android:maxLength="12"
+                            android:paddingLeft="@dimen/_14sdp"
+                            android:textSize="@dimen/_10sdp" />
+                        <TextView
+                            android:id="@+id/adharError"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="*Please enter age"
+                            android:textColor="#B51414"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_18sdp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:textSize="@dimen/_12sdp"
+                        android:text="Pan card number"
+                        android:textColor="@color/textcolor" />
+
+                    <EditText
+                        android:id="@+id/PanEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textColorHint="@color/hintcolor"
+                        android:textAllCaps="true"
+                        android:background="@drawable/edit_bg"
+                        android:hint="Enter pan card number"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/_14sdp"
+                        android:textSize="@dimen/_10sdp" />
+                    <TextView
+                        android:id="@+id/panError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*Please enter age"
+                        android:textColor="#B51414"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+
+
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Gender"
+                    android:visibility="gone"
+                    android:textColor="@color/textcolor" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:background="@drawable/edit_bg">
+                    <com.skydoves.powerspinner.PowerSpinnerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:hint="Select Gender"
+                        android:textColor="#858484"
+                        android:textColorHint="#C8C5C5"
+                        android:textSize="13sp"
+                        android:entries="@array/genderArray"
+                        app:spinner_arrow_gravity="end"
+                        app:spinner_arrow_padding="8dp"
+                        app:spinner_arrow_tint="@color/purple_200"
+                        app:spinner_divider_color="@color/purple_200"
+                        app:spinner_divider_show="true"
+                        app:spinner_divider_size="0.4dp"
+                        app:spinner_popup_animation="dropdown"
+                        app:spinner_popup_background="#fff"
+                        app:spinner_popup_elevation="14dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_18sdp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Date of Joining"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/textcolor" />
+                    <TextView
+                        android:id="@+id/Dojet"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        android:gravity="center_vertical"
+                        android:textColorHint="@color/hintcolor"
+                        android:drawableRight="@drawable/ic_path_92"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/edit_bg"
+                        android:hint="Enter DOB"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/_14sdp"
+                        android:textSize="@dimen/_10sdp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Upload Photo"
+                    android:textColor="@color/textcolor" />
+
+                <TextView
+                    android:id="@+id/UploadPhotoEt"
+                    android:layout_width="match_parent"
+                    android:textColorHint="@color/hintcolor"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:drawableRight="@drawable/ic_icon_feather_upload_cloud"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:background="@drawable/edit_bg"
+                    android:hint="Upload Photo"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/_14sdp"
+                    android:textSize="12sp" />
+
+                <RelativeLayout
+                    android:id="@+id/PhotoLayout"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/Photo1"
+                        android:layout_width="70dip"
+                        android:padding="@dimen/_8sdp"
+                        android:src="@drawable/hrlogo"
+                        android:layout_height="70dip"
+                        android:layout_marginVertical="@dimen/_5sdp" />
+
+                    <ImageView
+                        android:id="@+id/CancelImg1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_cancel" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Upload Adhaar Front"
+                    android:textColor="@color/textcolor" />
+
+                <TextView
+                    android:id="@+id/AdharFront"
+                    android:layout_width="match_parent"
+                    android:textColorHint="@color/hintcolor"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:drawableRight="@drawable/ic_icon_feather_upload_cloud"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:background="@drawable/edit_bg"
+                    android:hint="Upload Adhaar Card"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/_14sdp"
+                    android:textSize="12sp" />
+
+                <RelativeLayout
+                    android:id="@+id/AdharFrontLayout"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/AdharFronPhoto"
+                        android:layout_width="80dip"
+                        android:padding="@dimen/_8sdp"
+                        android:src="@drawable/hrlogo"
+                        android:layout_height="80dip"
+                        android:layout_marginVertical="@dimen/_5sdp" />
+
+                    <ImageView
+                        android:id="@+id/AdhaarCancleImg"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_cancel" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Upload Adhaar Back"
+                    android:textColor="@color/textcolor" />
+
+                <TextView
+                    android:id="@+id/UploadAdhaarBack"
+                    android:layout_width="match_parent"
+                    android:textColorHint="@color/hintcolor"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:drawableRight="@drawable/ic_icon_feather_upload_cloud"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:background="@drawable/edit_bg"
+                    android:hint="Upload Adhaar Back"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/_14sdp"
+                    android:textSize="12sp" />
+
+                <RelativeLayout
+                    android:id="@+id/AdharBackLayout"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/AdharBackImg"
+                        android:layout_width="80dip"
+                        android:padding="@dimen/_8sdp"
+                        android:src="@drawable/hrlogo"
+                        android:layout_height="80dip"
+                        android:layout_marginVertical="@dimen/_5sdp" />
+
+                    <ImageView
+                        android:id="@+id/AdhaarBackCancle"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_cancel" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Upload Pan Card"
+                    android:textColor="@color/textcolor" />
+
+                <TextView
+                    android:id="@+id/UploadPanCardtv"
+                    android:layout_width="match_parent"
+                    android:textColorHint="@color/hintcolor"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:drawableRight="@drawable/ic_icon_feather_upload_cloud"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:background="@drawable/edit_bg"
+                    android:hint="Upload Photo"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/_14sdp"
+                    android:textSize="12sp" />
+                <RelativeLayout
+                    android:id="@+id/PanCardLayout"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/PanImg"
+                        android:layout_width="80dip"
+                        android:padding="@dimen/_8sdp"
+                        android:src="@drawable/hrlogo"
+                        android:layout_height="80dip"
+                        android:layout_marginVertical="@dimen/_5sdp" />
+
+                    <ImageView
+                        android:id="@+id/PanCancleImg"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_cancel" />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Upload Resume"
+                    android:textColor="@color/textcolor" />
+
+                <TextView
+                    android:id="@+id/UploadResumeTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@drawable/edit_bg"
+                    android:drawableRight="@drawable/ic_icon_feather_upload_cloud"
+                    android:hint="Upload"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/_14sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:textColorHint="@color/hintcolor"
+                    android:textSize="12sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/savebtn"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:layout_gravity="bottom"
+                    android:text="Save Employee"
+                    android:background="@color/teal_200"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+        <!--        <RelativeLayout-->
+        <!--            android:layout_width="@dimen/_60sdp"-->
+        <!--            android:layout_height="@dimen/_60sdp"-->
+        <!--            android:layout_alignParentRight="true"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:layout_marginRight="@dimen/_10sdp"-->
+        <!--            android:id="@+id/nextBtn"-->
+        <!--            android:background="?selectableItemBackgroundBorderless"-->
+        <!--            android:gravity="center"-->
+        <!--            android:layout_marginTop="@dimen/_20sdp"-->
+        <!--            android:layout_marginBottom="@dimen/_15sdp">-->
+
+        <!--           -->
+        <!--        </RelativeLayout>-->
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+</layout>

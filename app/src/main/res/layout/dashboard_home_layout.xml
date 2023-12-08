@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/EmployeeRegistationCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/firstcardbg"
+        android:paddingTop="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/regisicon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:src="@drawable/registrationicon" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="-30dp"
+            android:layout_marginBottom="-120dp"
+            android:src="@drawable/mask" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/homeDashboarditemTxt"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_toRightOf="@id/regisicon"
+            android:text="Employee Registration"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+</LinearLayout>

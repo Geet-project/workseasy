@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Work Easy</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+    <string name="Poppins_Regular" translatable="false">Poppins-Regular</string>
+    <string name="Poppins_Medium" translatable="false">Poppins-Medium</string>
+    <string name="Poppins_Semi_Bold" translatable="false">Poppins-SemiBold</string>
+    <string name="Poppins_Bold" translatable="false">Poppins-Bold</string>
+    <string name="Poppins_Black" translatable="false">Poppins-Black</string>
+    <string name="Poppins_ExtraBold" translatable="false">Poppins-ExtraBold</string>
+    <string name="alert_no_internet">No internet connection</string>
+    <string name="text_check_connection">Please check your internet settings.</string>
+    <string name="adharhint"><b>Enter Adhaar Number</b></string>
+
+
+    <string-array name="genderArray">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="maritalStatus">
+        <item>Married</item>
+        <item>UnMarried</item>
+    </string-array>
+
+    <string-array name="yesnoarray">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="ottype">
+        <item>Day Wise</item>
+        <item>Hourly Basis</item>
+    </string-array>
+
+    <string-array name="salarytype">
+        <item>Basic</item>
+        <item>DA</item>
+        <item>HRA</item>
+        <item>CONV</item>
+        <item>MED</item>
+        <item>TEL</item>
+        <item>Others</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cancel">cancel</string>
+    <string name="ok">ok</string>
+    <string name="title_activity_salary_structure">SalaryStructureActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+</resources>

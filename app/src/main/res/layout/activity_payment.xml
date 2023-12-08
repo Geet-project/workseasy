@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.accounts.PaymentActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        app:elevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/round_actionbar"
+        android:gravity="center"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:clickable="true"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_baseline_arrow_circle_left_24" />
+
+                <TextView
+                    android:id="@+id/txt_actiontitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/backBtn"
+                    android:layout_weight="1"
+                    android:padding="1dp"
+                    android:text="Payment"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottmLayout"
+        android:layout_below="@id/appBarLayout"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Beneficiary Name"
+                        android:textColor="@color/textcolor" />
+
+                    <EditText
+                        android:id="@+id/BeneficiaryEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textColorHint="@color/hintcolor"
+                        android:background="@drawable/edit_bg"
+                        android:layout_marginRight="@dimen/_3sdp"
+                        android:hint="Enter Beneficiary Name"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/_14sdp"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/beneficaryError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*Please enter age"
+                        android:textColor="#B51414"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Employee Code"
+                        android:textColor="@color/textcolor" />
+
+                    <EditText
+                        android:id="@+id/EmpCodeEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textColorHint="@color/hintcolor"
+                        android:background="@drawable/edit_bg"
+                        android:hint="Enter Employee Code"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/_14sdp"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/empCodeError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*Please enter age"
+                        android:textColor="#B51414"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_18sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Payment Head"
+                        android:textColor="@color/textcolor" />
+
+                    <EditText
+                        android:id="@+id/PaymentHeadEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_3sdp"
+                        android:background="@drawable/edit_bg"
+                        android:paddingRight="@dimen/_5sdp"
+                        android:hint="Advance"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/_14sdp"
+                        android:textColorHint="@color/hintcolor"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/headError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*Please enter age"
+                        android:textColor="#B51414"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Payment Status"
+                        android:textColor="@color/textcolor" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_3sdp"
+                        android:background="@drawable/edit_bg">
+
+                        <com.skydoves.powerspinner.PowerSpinnerView
+                            android:id="@+id/Paymentspinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
+                            android:gravity="center_vertical"
+                            android:hint="Select Payment Status"
+                            android:padding="10dp"
+                            android:textColor="#858484"
+                            android:textColorHint="#C8C5C5"
+                            android:textSize="12sp"
+                            app:spinner_arrow_gravity="end"
+                            app:spinner_arrow_padding="8dp"
+                            app:spinner_arrow_tint="@color/purple_200"
+                            app:spinner_divider_color="@color/purple_200"
+                            app:spinner_divider_show="true"
+                            app:spinner_divider_size="0.4dp"
+                            app:spinner_popup_animation="dropdown"
+                            app:spinner_popup_background="#fff"
+                            app:spinner_popup_elevation="14dp" />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/paymentStatusError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*Please enter age"
+                        android:textColor="#B51414"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Payment Date"
+                android:textColor="@color/textcolor" />
+
+            <EditText
+                android:id="@+id/PaymentDateEt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/edit_bg"
+                android:hint="Enter Payment Date"
+                android:inputType="text"
+                android:textColorHint="@color/hintcolor"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/_14sdp"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/paymentDateError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:text="*Please enter age"
+                android:textColor="#B51414"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Payment Mode"
+                android:textColor="@color/textcolor" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:background="@drawable/edit_bg">
+                <com.skydoves.powerspinner.PowerSpinnerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:hint="Select Payment Mode"
+                    android:textColor="#858484"
+                    android:id="@+id/payModespinner"
+                    android:textColorHint="#C8C5C5"
+                    android:textSize="13sp"
+                    android:entries="@array/genderArray"
+                    app:spinner_arrow_gravity="end"
+                    app:spinner_arrow_padding="8dp"
+                    app:spinner_arrow_tint="@color/purple_200"
+                    app:spinner_divider_color="@color/purple_200"
+                    app:spinner_divider_show="true"
+                    app:spinner_divider_size="0.4dp"
+                    app:spinner_popup_animation="dropdown"
+                    app:spinner_popup_background="#fff"
+                    app:spinner_popup_elevation="14dp" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/paymodeError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:text="*Please enter age"
+                android:textColor="#B51414"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Transaction Ref."
+                android:textColor="@color/textcolor" />
+
+            <EditText
+                android:id="@+id/TransactionEt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/edit_bg"
+                android:hint="Enter Transaction ref."
+                android:inputType="text"
+                android:textColorHint="@color/hintcolor"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/_14sdp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/trasRefError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="*Please enter age"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:textColor="#B51414"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Remarks"
+                android:textColor="@color/textcolor" />
+
+            <EditText
+                android:id="@+id/RemarkEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/edit_bg"
+                android:hint="Enter Remarks.."
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:paddingLeft="@dimen/_14sdp"
+                android:textColorHint="@color/hintcolor"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/remarksError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="*Please enter age"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:textColor="#B51414"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottmLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/prevBtn"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@drawable/circle_green_btn"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_baseline_keyboard_arrow_left_24" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/nextBtn"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="bottom"
+                android:background="@drawable/circle_green_btn"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
+</layout>

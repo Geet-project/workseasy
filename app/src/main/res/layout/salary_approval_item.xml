@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="@dimen/_4sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/_5sdp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:id="@+id/FirstLayout"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:id="@+id/approveTopLayout"
+            android:visibility="visible"
+            android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_weight="1.4"
+                app:civ_border_width="1dp"
+                android:padding="@dimen/_3sdp"
+                android:layout_gravity="center"
+                app:civ_border_color="@color/purple_200"
+                android:src="@drawable/profilephoto"
+                android:id="@+id/empProfilePhoto"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Anubhav Kumar"
+                    android:id="@+id/empName"
+                    android:textSize="16sp"
+                    android:textColor="@color/purple_200"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Senior Employee"
+                    android:id="@+id/empDesignation"
+                    android:textSize="14sp"
+                    android:textColor="@color/textcolor"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_gravity="bottom"
+                    android:text="Employee Code - 457890"
+                    android:id="@+id/empCode"
+                    android:gravity="bottom"
+                    android:textSize="14sp"
+                    android:textColor="@color/textcolor"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textSize="14sp"
+                    android:id="@+id/requestedAmount"
+                    android:text="Requested Amount Rs.5000"
+                    android:textColor="@color/red_color"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/currentDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.7"
+                android:layout_alignParentTop="true"
+                android:gravity="right"
+                android:text="7 Jan 2022"
+                android:textSize="12sp"
+                android:textColor="@color/textcolor" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="@color/gray_color"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/RejectedLayout"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_8sdp">
+
+            <TextView
+                android:id="@+id/ApproveDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="7 Jan 2022"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/leaveApproveStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Rejected"
+                android:textColor="@color/red_color" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Advance Reason Request"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:textColor="@color/textcolor"
+            android:layout_marginLeft="@dimen/_20sdp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:id="@+id/advanceReason"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:text="It is a long established fact that a reader will be distracted by the readable content of a page when"
+            android:layout_marginLeft="@dimen/_20sdp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            android:background="#E5E5E5"
+            android:layout_marginTop="@dimen/_8sdp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maximum deduction per month" />
+
+            <TextView
+                android:id="@+id/maxdeductionTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="1500"
+                android:textColor="@color/red_color" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salary Payment till date"/>
+
+            <TextView
+                android:id="@+id/salarytilldate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="1500"
+                android:textColor="@color/red_color" />
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ApproveRejectLayout"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_18sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:id="@+id/approvebtn"
+                android:backgroundTint="@color/purple_200"
+                android:text="Approve"
+                android:textColor="#fff"
+                android:textAllCaps="false"
+                android:background="@drawable/edit_bg"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="1"
+                android:id="@+id/rejectbtn"
+                android:backgroundTint="@color/red_color"
+                android:text="Reject"
+                android:textColor="#fff"
+                android:textAllCaps="false"
+                android:background="@drawable/edit_bg"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:id="@+id/commentbtn"
+                android:backgroundTint="@color/purple_200"
+                android:text="Comment"
+                android:textColor="#fff"
+                android:textAllCaps="false"
+                android:background="@drawable/edit_bg"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        android:id="@+id/secondLayout"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7 Jan 2022" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Rejected"
+                android:textColor="@color/red_color" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/advanceamount"
+            android:textColor="@color/red_color"
+            android:text="Advanced Rs.5000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Advance Reason Request"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:textColor="@color/textcolor" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:id="@+id/advanceReason2"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="It is a long established fact that a reader will be distracted by the readable content of a page when" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remarks"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:textColor="@color/textcolor" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:id="@+id/remarks"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="It is a long established fact that a reader will be distracted by the readable content of a page when" />
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

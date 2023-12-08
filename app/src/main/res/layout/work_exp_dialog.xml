@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:gravity="center"
+    app:cardCornerRadius="@dimen/_5sdp">
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_5sdp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:fontFamily="@font/poppinsregualr"
+                    android:text="Work Experience Details"
+                    android:textColor="@color/textcolor" />
+
+                <ImageButton
+                    android:id="@+id/cancelBtnDialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_cancel" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_18sdp"
+                android:text="Organization Name"
+                android:textColor="@color/textcolor" />
+
+            <EditText
+                android:id="@+id/OrgEt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/edit_bg"
+                android:hint="Enter Organization Name"
+                android:inputType="text"
+                android:paddingLeft="@dimen/_14sdp"
+                android:textColorHint="@color/hintcolor"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/orgerror"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:text="*Please enter email address"
+                android:textColor="#B51414"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/advReasonError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:text="*Please enter email address"
+                android:textColor="#B51414"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_18sdp"
+                android:text="Designation"
+                android:textColor="@color/textcolor" />
+
+            <EditText
+                android:id="@+id/DesigEt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/edit_bg"
+                android:hint="Enter Designation Name"
+                android:inputType="text"
+                android:paddingLeft="@dimen/_14sdp"
+                android:textColorHint="@color/hintcolor"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/desigerror"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:text="*Please enter email address"
+                android:textColor="#B51414"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date of Joining"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/tvdoj"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/edit_bg"
+                    android:drawableRight="@drawable/ic_path_92"
+                    android:gravity="center_vertical"
+                    android:hint="Date of Joining"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/_14sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:textColorHint="@color/hintcolor"
+                    android:textSize="@dimen/_10sdp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date of Leaving"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/tvdoL"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/edit_bg"
+                    android:drawableRight="@drawable/ic_path_92"
+                    android:gravity="center_vertical"
+                    android:hint="Date of Leaving"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/_14sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:textColorHint="@color/hintcolor"
+                    android:textSize="@dimen/_10sdp" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="352dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Reason of Leaving"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <EditText
+                        android:id="@+id/ReasonLeavingEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_3sdp"
+                        android:background="@drawable/edit_bg"
+                        android:gravity="center_vertical"
+                        android:hint="Reason of Leaving"
+                        android:maxLength="12"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/_14sdp"
+                        android:textColorHint="@color/hintcolor"
+                        android:textSize="@dimen/_10sdp" />
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/_10sdp"-->
+<!--                        android:text="Total Work Experience"-->
+<!--                        android:textColor="@color/textcolor" />-->
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/workexpet"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="@dimen/_35sdp"-->
+<!--                        android:layout_marginTop="@dimen/_5sdp"-->
+<!--                        android:background="@drawable/edit_bg"-->
+<!--                        android:hint="Total Work Experience"-->
+<!--                        android:inputType="text"-->
+<!--                        android:paddingLeft="@dimen/_14sdp"-->
+<!--                        android:textColorHint="@color/hintcolor"-->
+<!--                        android:textSize="12sp" />-->
+
+                    <TextView
+                        android:id="@+id/experror"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*Please enter age"
+                        android:textColor="#B51414"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+            <Button
+                android:id="@+id/Step5Submit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center|center_vertical"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center|center_vertical"
+                android:text="Submit" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

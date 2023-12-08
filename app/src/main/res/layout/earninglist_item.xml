@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_5sdp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/earningname"
+        android:textSize="12sp"
+        android:text="Name"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:id="@+id/earningvalue"
+        android:layout_weight="1"
+        android:text="Value"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_15sdp"
+        android:textSize="12sp"
+        android:id="@+id/deletearning"
+        android:layout_weight="1"
+        android:src="@drawable/ic_cancel"
+        android:text="Action"/>
+
+
+</LinearLayout>

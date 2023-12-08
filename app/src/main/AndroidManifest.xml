@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hr.hrmanagement">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.GET_CON TENT" />
+
+            <data android:mimeType="image/*" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.PICK" />
+
+            <data android:mimeType="image/*" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.CHOOSER" />
+        </intent>
+    </queries>
+
+    <application
+        android:name="com.workseasy.com.utils.ApplicationClass"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:requestRawExternalStorageAccess="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HrManagement"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.workseasy.com.ui.purchase.screens.CreatePoActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.purchase.screens.PrDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.purchase.screens.CreateQuotationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.purchase.screens.PrPendingQuotationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.attendance.AutoAttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.attendance.AttendanceWithLocationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.employeeRegistration.SalaryStructureActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.employeelist.SalaryHistoryActivity"
+            android:exported="false"
+            android:label="@string/title_activity_salary_structure"
+            android:theme="@style/Theme.HrManagement.NoActionBar" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.employeeRegistration.FamiliDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.employeeRegistration.WorkExperienceActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.employeeRegistration.HrDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.employeelist.ViewCardsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.notification.NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.accounts.AccountActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.accounts.PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.purchase.screens.QuotationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.purchase.screens.PrApprovalActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.purchase.screens.PrListingActiivty"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.purchase.screens.ConsumptionEntryActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.purchase.screens.GrnEntryActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.purchase.screens.RaisePrActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.purchase.screens.PurchaseProcurementActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.attendance.AttendanceForm3Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.attendance.AttendanceForm2Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.attendance.AttendanceForm1Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.cms.AboutActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.administrations.AdministrationsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.administrations.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.administrations.MPinChangeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.employeeDetails.EmployeeDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.HrAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.employeelist.EmployeeListActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.employeeRegistration.EmployeeRegistrationStep5"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.employeeRegistration.EmployeeRegistrationStep4"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.employeeRegistration.EmployeeRegistrationStep3"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.employeeRegistration.EmployeeRegistrationStep2"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.employeeRegistration.EmployeeRegistrationStep1"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.hradmin.employeeRegistration.EmployeeRegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.workseasy.com.ui.login.LoginActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.workseasy.com.ui.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

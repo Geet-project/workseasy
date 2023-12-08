@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.notification.NotificationActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        app:elevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/round_actionbar"
+        android:gravity="center"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:clickable="true"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_baseline_arrow_circle_left_24" />
+
+                <TextView
+                    android:id="@+id/txt_actiontitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/backBtn"
+                    android:layout_weight="1"
+                    android:padding="1dp"
+                    android:text="Notification"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/notiRecycler"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_10sdp"
+        tools:listitem="@layout/noti_layout"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:id="@+id/progressbar"
+        android:visibility="visible"
+        android:secondaryProgressTint="@color/purple_200"
+        android:progressBackgroundTint="@color/purple_200"
+        android:progressTint="@color/purple_200" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:id="@+id/noDataLayout"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:foregroundGravity="center"
+            android:id="@+id/nodataPic"
+            android:src="@drawable/ic_group_nodata"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nodataPic"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:fontFamily="@font/poppinsregualr"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="You have no notification right now.\nCome back later."/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</layout>

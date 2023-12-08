@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.hradmin.employeeRegistration.EmployeeRegistrationStep1">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            app:elevation="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/round_actionbar"
+            android:gravity="center"
+            tools:ignore="MissingConstraints">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/backBtn"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_baseline_arrow_circle_left_24" />
+                    <TextView
+                        android:id="@+id/txt_actiontitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/backBtn"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:padding="1dp"
+                        android:text="Registration"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_18sdp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="Pay Code"
+                                android:textColor="@color/textcolor" />
+
+                            <EditText
+                                android:id="@+id/PayCodeET"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_3sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:textColorHint="@color/hintcolor"
+                                android:background="@drawable/edit_bg"
+                                android:hint="Enter Pay Code"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:paddingLeft="@dimen/_14sdp"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="P.CA Number"
+                                android:textColor="@color/textcolor" />
+
+                            <EditText
+                                android:id="@+id/PCAEt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginLeft="@dimen/_3sdp"
+                                android:textColorHint="@color/hintcolor"
+                                android:background="@drawable/edit_bg"
+                                android:hint="Enter P.CA Number"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:maxLines="1"
+                                android:paddingLeft="@dimen/_14sdp"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="UAN No."
+                                android:textColor="@color/textcolor" />
+
+                            <EditText
+                                android:id="@+id/UanEt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_3sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:textColorHint="@color/hintcolor"
+                                android:background="@drawable/edit_bg"
+                                android:hint="Enter UAN Number"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:paddingLeft="@dimen/_14sdp"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="P.F Number"
+                                android:textColor="@color/textcolor" />
+
+                            <EditText
+                                android:id="@+id/PFEt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginLeft="@dimen/_3sdp"
+                                android:textColorHint="@color/hintcolor"
+                                android:background="@drawable/edit_bg"
+                                android:hint="Enter P.F Number"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:maxLines="1"
+                                android:paddingLeft="@dimen/_14sdp"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+
+
+                    <TextView
+                        android:id="@+id/presentAddressError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_22sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:text="*Please enter email address"
+                        android:textColor="#B51414"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="ESIC No."
+                        android:textColor="@color/textcolor" />
+
+
+                    <EditText
+                        android:id="@+id/ESICET"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textColorHint="@color/hintcolor"
+                        android:background="@drawable/edit_bg"
+                        android:hint="Enter ESIC Number"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/_14sdp"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="Wage Calculation"
+                                android:textColor="@color/textcolor" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_3sdp"
+                                android:background="@drawable/edit_bg">
+
+                                <com.skydoves.powerspinner.PowerSpinnerView
+                                    android:id="@+id/wageSpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:background="@android:color/transparent"
+                                    android:gravity="center_vertical"
+                                    android:hint="Monthly"
+                                    android:padding="10dp"
+                                    android:textColor="#858484"
+                                    android:textColorHint="#C8C5C5"
+                                    android:textSize="12sp"
+                                    app:spinner_arrow_gravity="end"
+                                    app:spinner_arrow_padding="8dp"
+                                    app:spinner_arrow_tint="@color/purple_200"
+                                    app:spinner_divider_color="@color/purple_200"
+                                    app:spinner_divider_show="true"
+                                    app:spinner_divider_size="0.4dp"
+                                    app:spinner_popup_animation="dropdown"
+                                    app:spinner_popup_background="#fff"
+                                    app:spinner_popup_elevation="14dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="Payment Mode"
+                                android:textColor="@color/textcolor" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_3sdp"
+                                android:background="@drawable/edit_bg">
+
+                                <com.skydoves.powerspinner.PowerSpinnerView
+                                    android:id="@+id/PaymentModeSpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:background="@android:color/transparent"
+                                    android:gravity="center_vertical"
+                                    android:hint="Cash"
+                                    android:padding="10dp"
+                                    android:textColor="#858484"
+                                    android:textColorHint="#C8C5C5"
+                                    android:textSize="12sp"
+                                    app:spinner_arrow_gravity="end"
+                                    app:spinner_arrow_padding="8dp"
+                                    app:spinner_arrow_tint="@color/purple_200"
+                                    app:spinner_divider_color="@color/purple_200"
+                                    app:spinner_divider_show="true"
+                                    app:spinner_divider_size="0.4dp"
+                                    app:spinner_popup_animation="dropdown"
+                                    app:spinner_popup_background="#fff"
+                                    app:spinner_popup_elevation="14dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="Date of Joining"
+                                android:textColor="@color/textcolor" />
+                            <TextView
+                                android:id="@+id/DobJoinEt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:paddingRight="@dimen/_10sdp"
+                                android:gravity="center_vertical"
+                                android:layout_gravity="center_vertical"
+                                android:textColorHint="@color/hintcolor"
+                                android:drawableRight="@drawable/ic_path_92"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/edit_bg"
+                                android:hint="Enter Date of Joining"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:paddingLeft="@dimen/_14sdp"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_3sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="Date of Leaving"
+                                android:textColor="@color/textcolor" />
+                            <TextView
+                                android:id="@+id/DobLeaveEt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center_vertical"
+                                android:paddingRight="@dimen/_10sdp"
+                                android:textColorHint="@color/hintcolor"
+                                android:drawableRight="@drawable/ic_path_92"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/edit_bg"
+                                android:hint="Enter Date of Leaving"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:paddingLeft="@dimen/_14sdp"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Reason of Leaving"
+                        android:textColor="@color/textcolor" />
+
+                    <EditText
+                        android:id="@+id/ReasonLeavingEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_80sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/edit_bg"
+                        android:hint="Enter Reason of Leaving "
+                        android:inputType="textMultiLine"
+                        android:maxLines="1"
+                        android:lines="5"
+                        android:paddingLeft="@dimen/_14sdp"
+                        android:textColorHint="@color/hintcolor"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/savebtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="bottom"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_30sdp"
+                        android:background="@color/teal_200"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                        android:text="Save"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

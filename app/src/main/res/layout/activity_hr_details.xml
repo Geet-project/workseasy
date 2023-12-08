@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.hradmin.employeeRegistration.EmployeeRegistrationStep1">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/round_actionbar"
+            android:gravity="center"
+            app:elevation="5dp"
+            tools:ignore="MissingConstraints">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/backBtn"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_centerVertical="true"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:src="@drawable/ic_baseline_arrow_circle_left_24" />
+
+                    <TextView
+                        android:id="@+id/txt_actiontitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/backBtn"
+                        android:layout_weight="1"
+                        android:padding="1dp"
+                        android:text="HR Details"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:text="PF Number"
+                            android:textColor="@color/textcolor"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <EditText
+                            android:id="@+id/PFEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginLeft="@dimen/_18sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:background="@drawable/edit_bg"
+                            android:capitalize="characters"
+                            android:hint="Enter PF Number"
+                            android:inputType="textCapCharacters"
+                            android:maxLines="1"
+                            android:paddingLeft="@dimen/_14sdp"
+                            android:textAllCaps="true"
+                            android:textColorHint="@color/hintcolor"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/pferror"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_22sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:text="*Please enter email address"
+                            android:textColor="#B51414"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/labelFatherName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="UAN Number"
+                            android:textColor="@color/textcolor"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_18sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/UanEt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_bg"
+                                android:capitalize="characters"
+                                android:hint="Enter UAN Number"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:paddingLeft="@dimen/_14sdp"
+                                android:textAllCaps="true"
+                                android:textColorHint="@color/hintcolor"
+                                android:textSize="@dimen/_10sdp" />
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/uanerror"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_22sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:text="*Please enter email address"
+                            android:textColor="#B51414"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="ESIC"
+                                    android:textColor="@color/textcolor"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <EditText
+                                    android:id="@+id/etEsic"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:background="@drawable/edit_bg"
+                                    android:inputType="number"
+                                    android:maxLines="1"
+                                    android:hint="Enter ESIC No."
+                                    android:paddingLeft="@dimen/_14sdp"
+                                    android:paddingRight="@dimen/_10sdp"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/esicError"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="*Please enter age"
+                                    android:textColor="#B51414"
+                                    android:textSize="12sp"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="Payment Mode"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/edit_bg">
+
+                                <com.skydoves.powerspinner.PowerSpinnerView
+                                    android:id="@+id/paymentSpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:background="@android:color/transparent"
+                                    android:entries="@array/genderArray"
+                                    android:gravity="center_vertical"
+                                    android:hint="Select Payment Mode"
+                                    android:padding="10dp"
+                                    android:textColor="#858484"
+                                    android:textColorHint="#C8C5C5"
+                                    android:textSize="@dimen/_10sdp"
+                                    app:spinner_arrow_gravity="end"
+                                    app:spinner_arrow_padding="8dp"
+                                    app:spinner_arrow_tint="@color/purple_200"
+                                    app:spinner_divider_color="@color/purple_200"
+                                    app:spinner_divider_show="true"
+                                    app:spinner_divider_size="0.4dp"
+                                    app:spinner_popup_animation="dropdown"
+                                    app:spinner_popup_background="#fff"
+                                    app:spinner_popup_elevation="14dp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="*Please enter age"
+                                android:textColor="#B51414"
+                                android:textSize="12sp"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/_8sdp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="Choose Shift"
+                                    android:textColor="@color/textcolor"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_toLeftOf="@id/noti_icon"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/edit_bg">
+
+                                    <com.skydoves.powerspinner.PowerSpinnerView
+                                        android:id="@+id/shiftSpinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:gravity="center_vertical"
+                                        android:hint="Select Shift"
+                                        android:padding="10dp"
+                                        android:textColor="@color/textcolor"
+                                        android:textColorHint="@color/hintcolor"
+                                        android:textSize="12sp"
+                                        app:spinner_arrow_gravity="end"
+                                        app:spinner_arrow_padding="8dp"
+                                        app:spinner_arrow_tint="@color/hintcolor"
+                                        app:spinner_divider_color="@color/hintcolor"
+                                        app:spinner_divider_show="true"
+                                        app:spinner_divider_size="0.4dp"
+                                        app:spinner_popup_animation="dropdown"
+                                        app:spinner_popup_background="@color/white"
+                                        app:spinner_popup_elevation="14dp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="Choose Category"
+                                    android:textColor="@color/textcolor"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_toLeftOf="@id/noti_icon"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/edit_bg">
+
+                                    <com.skydoves.powerspinner.PowerSpinnerView
+                                        android:id="@+id/categorySpinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:gravity="center_vertical"
+                                        android:hint="Select Category"
+                                        android:padding="10dp"
+                                        android:textColor="@color/textcolor"
+                                        android:textColorHint="@color/hintcolor"
+                                        android:textSize="12sp"
+                                        app:spinner_arrow_gravity="end"
+                                        app:spinner_arrow_padding="8dp"
+                                        app:spinner_arrow_tint="@color/hintcolor"
+                                        app:spinner_divider_color="@color/hintcolor"
+                                        app:spinner_divider_show="true"
+                                        app:spinner_divider_size="0.4dp"
+                                        app:spinner_popup_animation="dropdown"
+                                        app:spinner_popup_background="@color/white"
+                                        app:spinner_popup_elevation="14dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="*Please enter age"
+                                    android:textColor="#B51414"
+                                    android:textSize="12sp"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="Choose Grade"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/edit_bg">
+
+                                <com.skydoves.powerspinner.PowerSpinnerView
+                                    android:id="@+id/gradeSpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:background="@android:color/transparent"
+                                    android:entries="@array/genderArray"
+                                    android:gravity="center_vertical"
+                                    android:hint="Select Grade"
+                                    android:padding="10dp"
+                                    android:textColor="#858484"
+                                    android:textColorHint="#C8C5C5"
+                                    android:textSize="@dimen/_10sdp"
+                                    app:spinner_arrow_gravity="end"
+                                    app:spinner_arrow_padding="8dp"
+                                    app:spinner_arrow_tint="@color/purple_200"
+                                    app:spinner_divider_color="@color/purple_200"
+                                    app:spinner_divider_show="true"
+                                    app:spinner_divider_size="0.4dp"
+                                    app:spinner_popup_animation="dropdown"
+                                    app:spinner_popup_background="#fff"
+                                    app:spinner_popup_elevation="14dp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="*Please enter age"
+                                android:textColor="#B51414"
+                                android:textSize="12sp"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Allowed Late Arrival"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:id="@+id/LateArrTv"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/edit_bg"
+                                android:drawableRight="@drawable/ic_path_92"
+                                android:gravity="center_vertical"
+                                android:hint="Late Arrival"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:paddingLeft="@dimen/_14sdp"
+                                android:paddingRight="@dimen/_10sdp"
+                                android:textColorHint="@color/hintcolor"
+                                android:textSize="@dimen/_10sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Allowed Early Departure"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:id="@+id/earlydeptv"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/edit_bg"
+                                android:drawableRight="@drawable/ic_path_92"
+                                android:gravity="center_vertical"
+                                android:hint="Early Departure"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:paddingLeft="@dimen/_14sdp"
+                                android:paddingRight="@dimen/_10sdp"
+                                android:textColorHint="@color/hintcolor"
+                                android:textSize="@dimen/_10sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Half Day Marking Duration"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:id="@+id/halfDayTv"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/edit_bg"
+                                android:drawableRight="@drawable/ic_path_92"
+                                android:gravity="center_vertical"
+                                android:hint="Half Day Marking Duration"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:paddingLeft="@dimen/_14sdp"
+                                android:paddingRight="@dimen/_10sdp"
+                                android:textColorHint="@color/hintcolor"
+                                android:textSize="@dimen/_10sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Present Marking Duration"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:id="@+id/presentMarkingTv"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/edit_bg"
+                                android:drawableRight="@drawable/ic_path_92"
+                                android:gravity="center_vertical"
+                                android:hint="Present Marking Duration"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:paddingLeft="@dimen/_14sdp"
+                                android:paddingRight="@dimen/_10sdp"
+                                android:textColorHint="@color/hintcolor"
+                                android:textSize="@dimen/_10sdp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/_8sdp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="Choose First Weekly Off"
+                                    android:textColor="@color/textcolor"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_toLeftOf="@id/noti_icon"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/edit_bg">
+
+                                    <com.skydoves.powerspinner.PowerSpinnerView
+                                        android:id="@+id/firstlyOffSpinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:gravity="center_vertical"
+                                        android:hint="Select First Weekly Off"
+                                        android:padding="10dp"
+                                        android:textColor="@color/textcolor"
+                                        android:textColorHint="@color/hintcolor"
+                                        android:textSize="12sp"
+                                        app:spinner_arrow_gravity="end"
+                                        app:spinner_arrow_padding="8dp"
+                                        app:spinner_arrow_tint="@color/hintcolor"
+                                        app:spinner_divider_color="@color/hintcolor"
+                                        app:spinner_divider_show="true"
+                                        app:spinner_divider_size="0.4dp"
+                                        app:spinner_popup_animation="dropdown"
+                                        app:spinner_popup_background="@color/white"
+                                        app:spinner_popup_elevation="14dp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="Second Weekly Off"
+                                    android:textColor="@color/textcolor"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_toLeftOf="@id/noti_icon"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/edit_bg">
+
+                                    <com.skydoves.powerspinner.PowerSpinnerView
+                                        android:id="@+id/secondWeeklyOffSpinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:gravity="center_vertical"
+                                        android:hint="Select Second Weekly Off"
+                                        android:padding="10dp"
+                                        android:textColor="@color/textcolor"
+                                        android:textColorHint="@color/hintcolor"
+                                        android:textSize="12sp"
+                                        app:spinner_arrow_gravity="end"
+                                        app:spinner_arrow_padding="8dp"
+                                        app:spinner_arrow_tint="@color/hintcolor"
+                                        app:spinner_divider_color="@color/hintcolor"
+                                        app:spinner_divider_show="true"
+                                        app:spinner_divider_size="0.4dp"
+                                        app:spinner_popup_animation="dropdown"
+                                        app:spinner_popup_background="@color/white"
+                                        app:spinner_popup_elevation="14dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="*Please enter age"
+                                    android:textColor="#B51414"
+                                    android:textSize="12sp"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_marginRight="@dimen/_18sdp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="E-mail Id"
+                                    android:textColor="@color/textcolor"
+                                    android:textSize="@dimen/_12sdp"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/EmailEt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_marginRight="@dimen/_3sdp"
+                                    android:background="@drawable/edit_bg"
+                                    android:hint="Enter e-mail id"
+                                    android:inputType="textEmailAddress"
+                                    android:maxLines="1"
+                                    android:paddingLeft="@dimen/_14sdp"
+                                    android:paddingRight="@dimen/_5sdp"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="12sp"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="Pay Code"
+                                    android:textColor="@color/textcolor"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_marginRight="@dimen/_3sdp"
+                                    android:background="@drawable/edit_bg"
+                                    android:hint="Enter Pay Code"
+                                    android:inputType="textEmailAddress"
+                                    android:maxLines="1"
+                                    android:paddingLeft="@dimen/_14sdp"
+                                    android:paddingRight="@dimen/_5sdp"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="12sp"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="Designation"
+                                    android:textColor="@color/textcolor"
+                                    android:visibility="gone" />
+
+                                <EditText
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_marginRight="@dimen/_3sdp"
+                                    android:background="@drawable/edit_bg"
+                                    android:hint="Enter Designation"
+                                    android:inputType="textEmailAddress"
+                                    android:maxLines="1"
+                                    android:paddingLeft="@dimen/_14sdp"
+                                    android:paddingRight="@dimen/_5sdp"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="12sp"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="Department"
+                                    android:textColor="@color/textcolor"
+                                    android:visibility="gone" />
+
+                                <EditText
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_marginRight="@dimen/_3sdp"
+                                    android:background="@drawable/edit_bg"
+                                    android:hint="Enter Department"
+                                    android:inputType="textEmailAddress"
+                                    android:maxLines="1"
+                                    android:paddingLeft="@dimen/_14sdp"
+                                    android:paddingRight="@dimen/_5sdp"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="12sp"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:id="@+id/emailError"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="*Please enter age"
+                                    android:textColor="#B51414"
+                                    android:textSize="12sp"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Date of Leaving"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:id="@+id/tvdoL"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/edit_bg"
+                                android:drawableRight="@drawable/ic_path_92"
+                                android:gravity="center_vertical"
+                                android:hint="Date of Leaving"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:paddingLeft="@dimen/_14sdp"
+                                android:paddingRight="@dimen/_10sdp"
+                                android:textColorHint="@color/hintcolor"
+                                android:textSize="@dimen/_10sdp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_18sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="352dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="Reason of Leaving"
+                                    android:textColor="@color/textcolor"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <EditText
+                                    android:id="@+id/ReasonLeavingEt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:background="@drawable/edit_bg"
+                                    android:inputType="text "
+                                    android:maxLines="1"
+                                    android:hint="Reason of Leaving"
+                                    android:paddingLeft="@dimen/_14sdp"
+                                    android:paddingRight="@dimen/_10sdp"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/leavingError"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="*Please enter age"
+                                    android:textColor="#B51414"
+                                    android:textSize="12sp"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/savebtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="bottom"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginHorizontal="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_30sdp"
+                            android:background="@color/teal_200"
+                            android:padding="@dimen/_5sdp"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                            android:text="Save Employee"
+                            android:textColor="@color/white" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+            <!--        <RelativeLayout-->
+            <!--            android:layout_width="@dimen/_60sdp"-->
+            <!--            android:layout_height="@dimen/_60sdp"-->
+            <!--            android:layout_alignParentRight="true"-->
+            <!--            android:layout_alignParentBottom="true"-->
+            <!--            android:layout_marginRight="@dimen/_10sdp"-->
+            <!--            android:id="@+id/nextBtn"-->
+            <!--            android:background="?selectableItemBackgroundBorderless"-->
+            <!--            android:gravity="center"-->
+            <!--            android:layout_marginTop="@dimen/_20sdp"-->
+            <!--            android:layout_marginBottom="@dimen/_15sdp">-->
+
+            <!--           -->
+            <!--        </RelativeLayout>-->
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

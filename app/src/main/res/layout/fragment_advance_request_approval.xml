@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.hradmin.employeeDetails.fragments.LeaveRequestApprovalFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollview"
+            android:layout_alignParentTop="true"
+            android:fillViewport="true"
+            android:visibility="gone"
+            android:layout_above="@id/bottmLayout">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/leaveReycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_10sdp"
+                tools:listitem="@layout/leave_request_approve_item"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </androidx.core.widget.NestedScrollView>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:id="@+id/progressbar"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:secondaryProgressTint="@color/purple_200"
+            android:progressBackgroundTint="@color/purple_200"
+            android:progressTint="@color/purple_200" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="visible"
+            android:id="@+id/noDataLayout"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:padding="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/nodata"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No Data Found !!"
+                android:textSize="22sp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</layout>

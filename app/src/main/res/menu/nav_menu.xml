@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homenav"
+        android:icon="@drawable/homeicon"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/hrnav"
+        android:icon="@drawable/adminicon"
+        android:visible="false"
+        android:title="HR &amp; Admin" />
+
+    <item
+        android:id="@+id/purchasenav"
+        android:icon="@drawable/purchaseicon"
+        android:visible="false"
+        android:title="Purchase &amp; Procurements" />
+
+    <item
+        android:id="@+id/billingnav"
+        android:icon="@drawable/billingicon"
+        android:visible="false"
+        android:title="Billing &amp; Execution" />
+
+    <item
+        android:id="@+id/accountsnav"
+        android:icon="@drawable/accountsicon"
+        android:visible="false"
+        android:title="Accounts" />
+
+    <item
+        android:id="@+id/reportsnav"
+        android:icon="@drawable/accountsicon"
+        android:visible="false"
+        android:title="Reports" />
+
+    <item
+        android:id="@+id/adminnav"
+        android:icon="@drawable/bossicon"
+        android:title="Administrations" />
+
+    <item
+        android:id="@+id/aboutnav"
+        android:icon="@drawable/abouticon"
+        android:title="About Company" />
+
+    <item
+        android:id="@+id/termsnav"
+        android:icon="@drawable/termsicon"
+        android:title="Terms &amp; Conditions" />
+    <item
+        android:id="@+id/privacynav"
+        android:icon="@drawable/privacyicon"
+        android:title="Privacy Policy" />
+
+</menu>

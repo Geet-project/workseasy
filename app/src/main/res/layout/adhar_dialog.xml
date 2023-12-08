@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:gravity="center"
+    app:cardCornerRadius="@dimen/_5sdp">
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_5sdp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp">
+
+
+                <ImageButton
+                    android:id="@+id/cancelBtnDialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_icon_ionic_ios_close_circle" />
+
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/white"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="@dimen/_15sdp"
+                android:text="Enter Aadhaar Number"
+                android:fontFamily="@font/poppinsregualr"
+                android:textColor="#ABABAB" />
+
+            <EditText
+                android:id="@+id/adharEt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/edit_bg"
+                android:hint="Aadhaar Number"
+                android:digits="1234567890"
+                android:maxLength="12"
+                android:inputType="number"
+                android:paddingLeft="@dimen/_14sdp"
+                android:textColorHint="@color/hintcolor"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/adharError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:text="*Please enter email address"
+                android:textColor="#B51414"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+
+
+
+            <Button
+                android:id="@+id/remarkBtnSent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center|center_vertical"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center|center_vertical"
+                android:text="Submit" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

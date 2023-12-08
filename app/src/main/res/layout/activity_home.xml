@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.workseasy.com.ui.HomeActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/round_actionbar"
+                android:gravity="center"
+                app:elevation="5dp"
+                tools:ignore="MissingConstraints">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:contentInsetLeft="0dp"
+                    app:contentInsetRight="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:layout_toLeftOf="@id/noti_icon"
+                            android:layout_weight="1">
+
+                            <com.skydoves.powerspinner.PowerSpinnerView
+                                android:id="@+id/orgSpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:background="@color/teal_200"
+                                android:gravity="center_vertical"
+                                android:hint="Select Organization"
+                                android:padding="10dp"
+                                android:textColor="@color/white"
+                                android:textColorHint="@color/white"
+                                android:textSize="12sp"
+                                app:spinner_arrow_gravity="end"
+                                app:spinner_arrow_padding="8dp"
+                                app:spinner_arrow_tint="@color/white"
+                                app:spinner_divider_color="@color/purple_200"
+                                app:spinner_divider_show="true"
+                                app:spinner_divider_size="0.4dp"
+                                app:spinner_popup_animation="dropdown"
+                                app:spinner_popup_background="@color/teal_200"
+                                app:spinner_popup_elevation="14dp" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/noti_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_weight="4"
+                            android:background="?android:attr/selectableItemBackgroundBorderless"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:src="@drawable/notiicon" />
+
+                            <TextView
+                                android:id="@+id/txt_countcard"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:layout_marginStart="10dp"
+                                android:gravity="center"
+                                android:padding="0dp"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                android:textStyle="normal"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/appBarLayout"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:id="@+id/inclued_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_15sdp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/homeRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/dashboard_home_layout" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </RelativeLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="#f3f3f3"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_layout"
+            app:itemIconTint="@color/purple_200"
+            app:itemTextColor="#777777"
+            app:menu="@menu/nav_menu">
+
+            <LinearLayout
+                android:id="@+id/LogOutLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:gravity="bottom">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/logouticon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="Log Out"
+                    android:textColor="#241332" />
+            </LinearLayout>
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

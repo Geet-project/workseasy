@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.purchase.screens.PrPendingQuotationActivity">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            app:elevation="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/round_actionbar"
+            android:gravity="center"
+            tools:ignore="MissingConstraints">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/backBtn"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:clickable="true"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_baseline_arrow_circle_left_24" />
+
+                    <TextView
+                        android:id="@+id/txt_actiontitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/backBtn"
+                        android:layout_weight="1"
+                        android:padding="1dp"
+                        android:text="PR Pending For Quotation"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/createquotation"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bg_round_custom_green_toast"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:text="Create Quotation"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/prdetails"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_round_custom_green_toast"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:text="PR Details"/>
+    </LinearLayout>
+</layout>

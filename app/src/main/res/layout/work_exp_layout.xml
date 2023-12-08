@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/_5sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/orgname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsregualr"
+            android:text="HRA(House Rental Allowance)"
+            android:textColor="@color/textcolor" />
+
+        <TextView
+            android:id="@+id/designame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orgname"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppinsregualr"
+            android:text="HRA(House Rental Allowance)"
+            android:textColor="@color/textcolor" />
+
+        <TextView
+            android:id="@+id/dojtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/designame"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppinsregualr"
+            android:text="Rs.1500"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/doltv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dojtv"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppinsregualr"
+            android:text="Rs.1500"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/reasonleavintv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/doltv"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppinsregualr"
+            android:text="Rs.1500"
+            android:textColor="@color/purple_200"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/deleteCardStep5"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_cancel" />
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

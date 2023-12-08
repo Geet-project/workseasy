@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="@dimen/_4sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/_5sdp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_weight="1.4"
+                app:civ_border_width="1dp"
+                android:padding="@dimen/_3sdp"
+                android:layout_gravity="left"
+                app:civ_border_color="@color/purple_200"
+                android:src="@drawable/profilephoto"
+                android:id="@+id/empProfilePhoto"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Anubhav Kumar"
+                    android:id="@+id/empName"
+                    android:textSize="16sp"
+                    android:textColor="@color/purple_200"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Senior Employee"
+                    android:id="@+id/empDesignation"
+                    android:textSize="14sp"
+                    android:textColor="@color/textcolor"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_gravity="bottom"
+                    android:text="7 Jan 2022 To 9 Jan 2022"
+                    android:id="@+id/leaveDate"
+                    android:gravity="bottom"
+                    android:textSize="12sp"
+                    android:textColor="@color/textcolor"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/leaveStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.4"
+                android:layout_alignParentBottom="true"
+                android:gravity="right"
+                android:text="approved"
+                android:textColor="@color/purple_200" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reason"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            android:layout_marginLeft="@dimen/_20sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="Reason"
+            android:id="@+id/leaveReason"
+            android:textColor="#8A8A8A"
+            android:textSize="12sp"
+            android:layout_marginLeft="@dimen/_20sdp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#E5E5E5"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_20sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remarks"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            android:layout_marginLeft="@dimen/_20sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="Reason"
+            android:id="@+id/leaveRemarks"
+            android:textColor="#8A8A8A"
+            android:textSize="12sp"
+            android:layout_marginLeft="@dimen/_20sdp"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
