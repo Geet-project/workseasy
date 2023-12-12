@@ -1,7 +1,6 @@
 package com.workseasy.com.ui
 
 data class Company(
-
     val auth_person_mob_no: String,
     val auth_person_name: String,
     val company_address: String,

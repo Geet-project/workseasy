@@ -38,7 +38,7 @@ import com.workseasy.com.ui.purchase.screens.PurchaseProcurementActivity
 import com.workseasy.com.utils.SharedPref
 import de.hdodenhof.circleimageview.CircleImageView
 
-class HomeActivity : AppCompatActivity(), HomeAdapter.OnClickListener{
+class HomeActivity : AppCompatActivity(), HomeAdapter.OnClickListener {
     lateinit var homeBinding: ActivityHomeBinding
     var sharedPref: SharedPref? = null
     var doubleTapBack = false

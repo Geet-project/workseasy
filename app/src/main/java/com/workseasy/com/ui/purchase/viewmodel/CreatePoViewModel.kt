@@ -9,11 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.workseasy.com.network.DataState
 import com.workseasy.com.network.GenericResponse
 import com.workseasy.com.repository.PoRepository
-import com.workseasy.com.ui.purchase.response.CreatePoDto
-import com.workseasy.com.ui.purchase.response.CreateQuotationResponse
-import com.workseasy.com.ui.purchase.response.PrSubmitResponse
-import com.workseasy.com.ui.purchase.response.QuotationPoListResponse
-import com.workseasy.com.ui.purchase.response.VendorListResponse
+import com.workseasy.com.ui.purchase.response.*
 import com.workseasy.com.utils.NetworkHelper
 import kotlinx.coroutines.launch
 
@@ -26,6 +22,9 @@ class CreatePoViewModel: com.workseasy.com.base.BaseViewModel() {
 
     private  val _createPoResponse: MutableLiveData<DataState<CreateQuotationResponse>> = MutableLiveData()
     val createPoResponse: LiveData<DataState<CreateQuotationResponse>> = _createPoResponse
+
+    private  val _poListResponse: MutableLiveData<DataState<PoListResponse>> = MutableLiveData()
+    val poListResponse: LiveData<DataState<PoListResponse>> = _poListResponse
 
 
     var repository: PoRepository?=null
@@ -102,6 +101,30 @@ class CreatePoViewModel: com.workseasy.com.base.BaseViewModel() {
             }
         } else {
             _createPoResponse.postValue(
+                com.workseasy.com.network.DataState.Error(
+                    exception = NetworkErrorException("Connection Error")
+                )
+            )
+        }
+    }
+
+    @SuppressLint("NewApi")
+    fun getPoList(context: Context
+    )= viewModelScope.launch {
+        _poListResponse.postValue(com.workseasy.com.network.DataState.Loading)
+        networkHelper = NetworkHelper(context)
+        if (networkHelper!!.isNetworkConnected()) {
+            try {
+                _poListResponse.value = com.workseasy.com.network.DataState.Success(
+                    data = repository!!.getPoList()
+                )
+            } catch (exception: Exception) {
+                _poListResponse.value = com.workseasy.com.network.DataState.Error(
+                    exception = exception
+                )
+            }
+        } else {
+            _poListResponse.postValue(
                 com.workseasy.com.network.DataState.Error(
                     exception = NetworkErrorException("Connection Error")
                 )

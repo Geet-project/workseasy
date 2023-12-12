@@ -498,5 +498,8 @@ interface ApiInterface {
         @Body createPoDto: CreatePoDto
     ): CreateQuotationResponse
 
+    @GET("api/po/getPoList")
+    suspend fun getPoList(): PoListResponse
+
 
 }

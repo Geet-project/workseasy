@@ -12,6 +12,8 @@ class PoRepository {
 
     suspend fun createPoDto(createPoDto: CreatePoDto) = client!!.createPo(createPoDto)
 
+    suspend fun getPoList() = client!!.getPoList()
+
 
 
 

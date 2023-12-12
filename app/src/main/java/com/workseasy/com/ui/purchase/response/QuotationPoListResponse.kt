@@ -7,5 +7,5 @@ data class QuotationPoListResponse(
     val `data`: List<QuotationPoListData>,
     val message: String,
     val condition: List<CondionDataItem>,
-    val previousConditions: List<PreviousConditionDataItem>
+//    val previousConditions: List<PreviousConditionDataItem>
 )

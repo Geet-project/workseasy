@@ -1,6 +1,7 @@
 package com.workseasy.com.ui.purchase.screens
 
 import android.app.ProgressDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -22,6 +23,8 @@ class CreatePoActivity : AppCompatActivity() {
     var vendorDto: List<VendorListData>? = null
     var quotationDto: List<QuotationPoListData>? = null
     var conditionDto: List<CondionDataItem>? = null
+    var previousconditionDto :List<PreviousConditionDataItem>?=null
+
 
     var vendorArray = mutableListOf<String>()
     var vendorIdArray = mutableListOf<Int>()
@@ -39,7 +42,6 @@ class CreatePoActivity : AppCompatActivity() {
     var remakrsIdArray = ArrayList<Int>()
     var selectedRemarksIdArray = ArrayList<Int>()
     var selectedRemarksPositionArray = ArrayList<Int>()
-    var previouscondition :List<Int>?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -167,7 +169,7 @@ class CreatePoActivity : AppCompatActivity() {
                         conditionDto = dataSate.data.condition
                         setQuotationSpinner(quotationDto!!)
                         setRemarksSpinner(conditionDto!!)
-                        previouscondition = dataSate.data.previousConditions;
+//                        previousconditionDto = dataSate.data.previousConditions;
                     } else {
                         progressBar?.dismiss()
                         Toast.makeText(this, dataSate.data.message, Toast.LENGTH_SHORT).show()
@@ -194,6 +196,9 @@ class CreatePoActivity : AppCompatActivity() {
                     if (dataSate.data.code == 200) {
                         progressBar?.dismiss()
                         Toast.makeText(this, dataSate.data.message, Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, ApprovePoActivity::class.java)
+//                    .putExtra("formtype", 5)
+                        startActivity(intent)
                     } else {
                         progressBar?.dismiss()
                         Toast.makeText(this, dataSate.data.message, Toast.LENGTH_SHORT).show()

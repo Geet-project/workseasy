@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="@dimen/_4sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/_5sdp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/poIdValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Po Id: "
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/vendorNameValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vendor Name:"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/dateValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date: "
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/statusValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Status:"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/approvebtn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/checkimg"
+                android:textSize="12sp"
+                android:backgroundTint="@color/purple_200"
+                android:layout_gravity="center|center_vertical"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:gravity="center|center_vertical"
+                android:textAllCaps="false"
+                android:text="Approve" />
+            <Button
+                android:id="@+id/rejectbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/checkimg"
+                android:textSize="12sp"
+                android:backgroundTint="@color/red_color"
+                android:layout_gravity="center|center_vertical"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:textAllCaps="false"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center|center_vertical"
+                android:text="Reject  " />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
