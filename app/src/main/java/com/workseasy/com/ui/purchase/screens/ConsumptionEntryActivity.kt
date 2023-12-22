@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import com.hr.hrmanagement.R
 import com.hr.hrmanagement.databinding.ActivityConsumptionEntryBinding
 import com.workseasy.com.ui.hradmin.employeeRegistration.response.Asset
+import com.workseasy.com.ui.purchase.response.ConsumptionDataItem
 import com.workseasy.com.ui.purchase.viewmodel.RaisePrViewModel
 import com.workseasy.com.utils.GenericTextWatcher
 import java.util.*
@@ -19,7 +20,7 @@ import java.util.*
 class ConsumptionEntryActivity : AppCompatActivity() {
     lateinit var _binding: ActivityConsumptionEntryBinding
     val binding get() = _binding!!
-    var assetDto: List<Asset>?=null
+    var consumptionDto: List<ConsumptionDataItem>?=null
     var assetArray = mutableListOf<String>()
     var selectedItem: String?=null
     var progressDialog: ProgressDialog?=null
@@ -35,10 +36,8 @@ class ConsumptionEntryActivity : AppCompatActivity() {
         progressDialog = ProgressDialog(this)
         setListeners()
         setValidationListeners()
-        callApiForSpinnerAsset("Item")
+        callApiForSpinnerAsset()
         spinnerAssetresponseHandle()
-
-
     }
 
     fun setListeners() {
@@ -88,17 +87,16 @@ class ConsumptionEntryActivity : AppCompatActivity() {
             }else if(consumptionDate==null){
                 binding.consumptionDateError.setText("*Please enter Consumption Date.")
                 binding.consumptionDateError.visibility = View.VISIBLE
-            }else if(RemarkValue.equals(""))
+            }else if ( RemarkValue.equals(""))
             {
                 binding.RemarkEt.requestFocus();
                 binding.remarkError.setText("*Please enter Remark")
                 binding.remarkError.visibility = View.VISIBLE
-            }else{
+            }else {
                 callApi(selectedItem!!, quantity, consumptionDate!!, RemarkValue)
                 responseHandle()
             }
         }
-
     }
 
     fun setValidationListeners()
@@ -110,25 +108,25 @@ class ConsumptionEntryActivity : AppCompatActivity() {
     fun callApi(item: String,
                 quantity: String,
                 date: String,
-                remark: String,)
+                remark: String)
     {
         viewModel.consumptionStore(item, quantity, date, remark, this)
     }
 
     fun responseHandle()
     {
-        viewModel.consumptionstoreResponse.observe(this){ dataSate->
+        viewModel.consumptionstoreResponse.observe(this) { dataSate->
             when(dataSate)
             {
-                is com.workseasy.com.network.DataState.Success ->{
-                    if(dataSate.data.status==200)
+                is com.workseasy.com.network.DataState.Success -> {
+                    if(dataSate.data.code==200)
                     {
                         Toast.makeText(this, "Data Saved", Toast.LENGTH_SHORT).show()
-                        progressDialog?.dismiss()
                         finish()
+                        progressDialog?.dismiss()
                     }else{
                         progressDialog?.dismiss()
-                        Toast.makeText(this, dataSate.data.error, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, dataSate.data.message, Toast.LENGTH_SHORT).show()
                     }
                 }
                 is com.workseasy.com.network.DataState.Loading -> {
@@ -144,37 +142,34 @@ class ConsumptionEntryActivity : AppCompatActivity() {
         }
     }
 
-    fun setAssetSpinner(assetList: List<Asset>, type: String)
+    fun setAssetSpinner(assetList: List<ConsumptionDataItem>)
     {
         assetArray.clear()
         for (i in 0 until assetList!!.size) {
-            assetArray?.add(assetList[i].name)
+            assetArray?.add(assetList[i].item)
         }
-        if(type.equals("Item"))
-        {
-            binding.itemSpinner.setItems(assetArray!!.toList())
-        }
+        binding.itemSpinner.setItems(assetArray!!.toList())
 
     }
 
-    fun callApiForSpinnerAsset(type: String)
+    fun callApiForSpinnerAsset()
     {
-        viewModel.getAssets(type, this)
+        viewModel.getConsumptionItemData(this)
     }
 
     fun spinnerAssetresponseHandle()
     {
-        viewModel.spinnerResponse.observe(this){ dataSate->
+        viewModel.consumptionListDataResponse.observe(this) { dataSate->
             when(dataSate)
             {
-                is com.workseasy.com.network.DataState.Success ->{
-                    if(dataSate.data.status==200)
+                is com.workseasy.com.network.DataState.Success -> {
+                    if(dataSate.data.code==200)
                     {
                         progressDialog!!.dismiss()
-                        assetDto = dataSate.data.data.assets
-                        setAssetSpinner(assetDto!!, dataSate.data.data.type)
+                        consumptionDto = dataSate.data.data
+                        setAssetSpinner(consumptionDto!!)
                     }else{
-                        Toast.makeText(this, dataSate.data.error, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, dataSate.data.message, Toast.LENGTH_SHORT).show()
                     }
                 }
                 is com.workseasy.com.network.DataState.Loading -> {

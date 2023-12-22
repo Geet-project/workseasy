@@ -323,26 +323,16 @@ interface ApiInterface {
         @Field("remark") remark: String?
     ): com.workseasy.com.network.GenericResponse<Pr>
 
-    @Multipart
-    @POST("api/grn/store")
-    suspend fun grnStore(
-        @Part("po") po: RequestBody,
-        @Part("item") item: RequestBody,
-        @Part("remark") remark: RequestBody,
-        @Part("bill_no") bill_no: RequestBody,
-        @Part("receipt_date") receipt_date: RequestBody,
-        @Part("quntity") quntity: RequestBody,
-        @Part photo: MultipartBody.Part?,
-    ): com.workseasy.com.network.GenericResponse<GrnResponse>
+
 
     @FormUrlEncoded
-    @POST("api/consumption/store")
+    @POST("api/consumption/createConsumption")
     suspend fun consumptionStore(
         @Field("item") item: String?,
         @Field("quantity") quantity: String?,
         @Field("date") status: String?,
         @Field("remark") remark: String?
-    ): com.workseasy.com.network.GenericResponse<Pr>
+    ): CreateQuotationResponse
 
     @GET("api/quotation/getQuotationForApproval")
     suspend fun getQuotationList(): QuotationApprovedResponse
@@ -500,6 +490,35 @@ interface ApiInterface {
 
     @GET("api/po/getPoList")
     suspend fun getPoList(): PoListResponse
+
+    @POST("api/po/changeStatus")
+    suspend fun changePoStatus (
+        @Body changePoStatusDto: ChangePoStatusDto
+    ): CreateQuotationResponse
+
+    @GET("api/grn/getGrnData")
+    suspend fun getGrnItemData(): GrnItemDataResponse
+
+    @GET("api/grn/getPOList")
+    suspend fun getGrnPoData(@Query("poId") poId: Int): GrnPoListData
+
+    @Multipart
+    @POST("api/grn/createGrn")
+    suspend fun grnStore(
+        @Part("poNo") po: RequestBody,
+        @Part("item") item: RequestBody,
+        @Part("remark") remark: RequestBody,
+        @Part("billNo") bill_no: RequestBody,
+        @Part("receiptDate") receipt_date: RequestBody,
+        @Part("quantity") quntity: RequestBody,
+        @Part photo: MultipartBody.Part?,
+    ): CreateQuotationResponse
+
+    @GET("api/consumption/getConsumptionData")
+    suspend fun getConsumptionData(): ConsumptionItemResponse
+
+    @GET("api/quotation/getQuotationForApproval")
+    suspend fun getQuotationForApproval(): QuotationApprovalListResponse
 
 
 }

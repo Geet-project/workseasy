@@ -13,7 +13,6 @@ class AccountActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_account)
         setListeners()
-
     }
     fun setListeners()
     {

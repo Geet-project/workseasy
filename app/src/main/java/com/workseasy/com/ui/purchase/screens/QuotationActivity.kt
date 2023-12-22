@@ -43,11 +43,6 @@ class QuotationActivity : AppCompatActivity() {
         binding.backBtn.setOnClickListener {
             finish()
         }
-
-
-
-
-
     }
 
     fun allBasicWorkLayouts()

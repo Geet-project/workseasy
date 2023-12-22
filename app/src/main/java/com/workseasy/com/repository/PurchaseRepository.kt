@@ -67,4 +67,16 @@ class PurchaseRepository {
         createQuotationDto: CreateQuotationDto,
     ) = client!!.createQuotation(createQuotationDto)
 
+    suspend fun getGrnItemData(
+    ) = client!!.getGrnItemData()
+
+    suspend fun getGrnPoData(poId: Int) = client!!.getGrnPoData(poId)
+
+    suspend fun getConsumptionItemData() = client!!.getConsumptionData()
+
+    suspend fun getQuotationForApproval() = client!!.getQuotationForApproval()
+
+
+
+
 }

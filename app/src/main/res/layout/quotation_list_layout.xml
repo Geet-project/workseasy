@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="@dimen/_4sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/_5sdp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="@dimen/_8sdp"
+        android:paddingRight="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/vendorNameValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vendor Name:"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/reqDateValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Required Date: "
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/deliveryDateValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delivery Date: "
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/discValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Disc: "
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/qtyValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qty : "
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/rateValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate : "
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/gstValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GST : "
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/fraightValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fraight : "
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/orderValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order : "
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/statusValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status : "
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

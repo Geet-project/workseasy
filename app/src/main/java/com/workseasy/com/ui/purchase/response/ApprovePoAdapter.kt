@@ -31,13 +31,13 @@ class ApprovePoAdapter (context: Context, var dataClicked: ApprovePoAdapter.Data
     }
 
     override fun onBindViewHolder(holder: PrViewHolder, position: Int) {
-        holder.poIdValue.text = prList.get(position)?.po_id
-        holder.vendorNameValue.text = prList.get(position)?.vendor_name
-        holder.dateValue.text = prList.get(position)?.created_at
-        holder.statusValue.text = prList.get(position)?.status
+        holder.poIdValue.text = "PO ID: "+prList.get(position)?.po_id
+        holder.vendorNameValue.text = "Vendor Nmee: " +prList.get(position)?.vendor_name
+        holder.dateValue.text = "Date: "+prList.get(position)?.created_at
+        holder.statusValue.text = "Status: "+prList.get(position)?.status
 
-        holder.itemView.setOnClickListener {
-            dataClicked?.itemClicked(prList, position, prList.get(position).id)
+        holder.approvebtn.setOnClickListener {
+            dataClicked?.itemClicked(position, prList.get(position).id)
         }
     }
     fun setData(data: ArrayList<PoDataItem>?) {
@@ -51,7 +51,7 @@ class ApprovePoAdapter (context: Context, var dataClicked: ApprovePoAdapter.Data
         return prList.size
     }
     interface DataClicked {
-        fun itemClicked(data: ArrayList<PoDataItem>?, index : Int?, prid:Int?)
+        fun itemClicked(index : Int?, prid:Int?)
     }
 
 }

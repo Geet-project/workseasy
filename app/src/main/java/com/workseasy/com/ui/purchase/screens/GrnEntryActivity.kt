@@ -23,6 +23,7 @@ import androidx.loader.content.CursorLoader
 import com.hr.hrmanagement.R
 import com.hr.hrmanagement.databinding.ActivityGrnEntryBinding
 import com.workseasy.com.ui.hradmin.employeeRegistration.response.Asset
+import com.workseasy.com.ui.purchase.response.GrnItemDataItem
 import com.workseasy.com.ui.purchase.viewmodel.RaisePrViewModel
 import com.workseasy.com.utils.GenericTextWatcher
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -37,20 +38,22 @@ class GrnEntryActivity : AppCompatActivity() {
     lateinit var _binding: ActivityGrnEntryBinding
     val binding get() = _binding!!
     val viewModel: RaisePrViewModel by viewModels()
+
     var receiptDate: String ?=null
     var progressDialog: ProgressDialog?=null
-    var assetDto: List<Asset>?=null
-    var assetArray = mutableListOf<String>()
+    var itemDto: List<GrnItemDataItem>?=null
+    var itemArray = mutableListOf<String>()
+    var itemId = mutableListOf<Int>()
+
     var selectedPr :String?=null
     var selectedItem: String?=null
+    var selectedItemID: Int?=null
+
     var PhotoPathUri: Uri? = null
     var requesCode: Int=0
     private val REQUEST_GALLERY_PERMISSION = 1
     private val REQUEST_CAMERA_PERMISSION= 2
     var bitmap: Bitmap? = null
-
-
-
     var photobody: MultipartBody.Part? = null
 
 
@@ -64,9 +67,10 @@ class GrnEntryActivity : AppCompatActivity() {
         progressDialog = ProgressDialog(this)
         setListeners()
         setValidationListeners()
+        apiCallForItemList()
+        itemListResponseHandle()
         callApiForSpinnerAsset("Item")
         callApiForSpinnerAsset("Pr")
-        spinnerAssetresponseHandle()
     }
 
     fun setValidationListeners()
@@ -106,6 +110,9 @@ class GrnEntryActivity : AppCompatActivity() {
         binding.itemSpinner.setOnSpinnerItemSelectedListener<String> { oldIndex, oldItem, newIndex, newText ->
             Log.e("stateSpin", ""+oldIndex+oldItem+newIndex+newText)
             selectedItem = newText
+            selectedItemID = itemId.get(newIndex)
+            apiCallForPoList(selectedItemID)
+            poListResponseHandle()
             binding.itemError.visibility = View.GONE
         }
 
@@ -191,47 +198,43 @@ class GrnEntryActivity : AppCompatActivity() {
         viewModel.getAssets(type, this)
     }
 
-        fun spinnerAssetresponseHandle()
-        {
-            viewModel.spinnerResponse.observe(this){ dataSate->
-                when(dataSate)
-                {
-                    is com.workseasy.com.network.DataState.Success ->{
-                        if(dataSate.data.status==200)
-                        {
-                            progressDialog!!.dismiss()
-                            assetDto = dataSate.data.data.assets
-                            setAssetSpinner(assetDto!!, dataSate.data.data.type)
-                        }else{
-                            Toast.makeText(this, dataSate.data.error, Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                    is com.workseasy.com.network.DataState.Loading -> {
-                        progressDialog?.show()
-                        progressDialog?.setMessage("Please Wait..")
-                    }
+//        fun spinnerAssetresponseHandle()
+//        {
+//            viewModel.spinnerResponse.observe(this){ dataSate->
+//                when(dataSate)
+//                {
+//                    is com.workseasy.com.network.DataState.Success ->{
+//                        if(dataSate.data.status==200)
+//                        {
+//                            progressDialog!!.dismiss()
+//                            assetDto = dataSate.data.data.assets
+//                            setAssetSpinner(assetDto!!, dataSate.data.data.type)
+//                        }else{
+//                            Toast.makeText(this, dataSate.data.error, Toast.LENGTH_SHORT).show()
+//                        }
+//                    }
+//                    is com.workseasy.com.network.DataState.Loading -> {
+//                        progressDialog?.show()
+//                        progressDialog?.setMessage("Please Wait..")
+//                    }
+//
+//                    is com.workseasy.com.network.DataState.Error -> {
+//                        progressDialog?.dismiss()
+//                        Toast.makeText(this, "Something Went Wrong", Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+//            }
+//        }
 
-                    is com.workseasy.com.network.DataState.Error -> {
-                        progressDialog?.dismiss()
-                        Toast.makeText(this, "Something Went Wrong", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
-        }
-
-    fun setAssetSpinner(assetList: List<Asset>, type: String)
+    fun setItemSpinner(assetList: List<GrnItemDataItem>)
     {
-        assetArray.clear()
+        itemArray.clear()
         for (i in 0 until assetList!!.size) {
-            assetArray?.add(assetList[i].name)
+            itemArray?.add(assetList[i].itemName)
+            itemId?.add(assetList[i].poId)
         }
-        if(type.equals("Pr"))
-        {
-            binding.prSpinner.setItems(assetArray!!.toList() )
-        }else if(type.equals("Item"))
-        {
-            binding.itemSpinner.setItems(assetArray!!.toList())
-        }
+        binding.itemSpinner.setItems(itemArray!!.toList())
+
 
     }
 
@@ -336,14 +339,14 @@ class GrnEntryActivity : AppCompatActivity() {
             when(dataSate)
             {
                 is com.workseasy.com.network.DataState.Success ->{
-                    if(dataSate.data.status==200)
+                    if(dataSate.data.code==200)
                     {
                         Toast.makeText(this, "Data Saved", Toast.LENGTH_SHORT).show()
                         progressDialog?.dismiss()
                         finish()
                     }else{
                         progressDialog?.dismiss()
-                        Toast.makeText(this, dataSate.data.error, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, dataSate.data.message, Toast.LENGTH_SHORT).show()
                     }
                 }
                 is com.workseasy.com.network.DataState.Loading -> {
@@ -375,5 +378,68 @@ class GrnEntryActivity : AppCompatActivity() {
             null
         )
         return Uri.parse(path)
+    }
+
+    fun apiCallForItemList(){
+        viewModel.getGrnItemData(this)
+    }
+
+    fun itemListResponseHandle()
+    {
+        viewModel.grnItemDataResponse.observe(this){ dataSate->
+            when(dataSate)
+            {
+                is com.workseasy.com.network.DataState.Success ->{
+                    if(dataSate.data.code==200)
+                    {
+                        progressDialog!!.dismiss()
+                        itemDto = dataSate.data.data
+                        setItemSpinner(itemDto!!)
+                    }else{
+                        Toast.makeText(this, dataSate.data.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+                is com.workseasy.com.network.DataState.Loading -> {
+                    progressDialog?.show()
+                    progressDialog?.setMessage("Please Wait..")
+                }
+
+                is com.workseasy.com.network.DataState.Error -> {
+                    progressDialog?.dismiss()
+                    Toast.makeText(this, "Something Went Wrong", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+    fun apiCallForPoList(poId:Int?) {
+        viewModel.getGrnPoData(poId!!,this)
+    }
+
+    fun poListResponseHandle()
+    {
+        viewModel.grnPrListDataResponse.observe(this){ dataSate->
+            when(dataSate)
+            {
+                is com.workseasy.com.network.DataState.Success ->{
+                    if(dataSate.data.code==200)
+                    {
+                        progressDialog!!.dismiss()
+                        binding.prSpinner.setItems(dataSate.data.data)
+                    }else{
+                        Toast.makeText(this, dataSate.data.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+                is com.workseasy.com.network.DataState.Loading -> {
+                    progressDialog?.show()
+                    progressDialog?.setMessage("Please Wait..")
+                }
+
+                is com.workseasy.com.network.DataState.Error -> {
+                    progressDialog?.dismiss()
+                    Toast.makeText(this, "Something Went Wrong", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 }

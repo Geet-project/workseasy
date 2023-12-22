@@ -81,6 +81,7 @@
                 android:id="@+id/remarkBtnSent"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_50sdp"
+                android:background="@color/red_color"
                 android:layout_gravity="center|center_vertical"
                 android:layout_marginHorizontal="@dimen/_10sdp"
                 android:layout_marginLeft="@dimen/_10sdp"

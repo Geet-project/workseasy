@@ -1,0 +1,32 @@
+package com.workseasy.com.ui.purchase.response
+
+data class QuotationApprovalListDataItem(
+    val company_branch_id: String,
+    val company_id: String,
+    val created_at: String,
+    val delivery: String,
+    val delivery_time: String,
+    val disc: String,
+    val fraight: String,
+    val grade: String,
+    val gst: String,
+    val id: Int,
+    val image: String,
+    val item: String,
+    val make: String,
+    val name: String,
+    val order_value: String,
+    val paymentmode: String,
+    val phone: String,
+    val pr_code: String,
+    val pr_id: String,
+    val quantity: String,
+    val quotation_id: String,
+    val rate: String,
+    val remark: String,
+    val rmk: String,
+    val status: String,
+    val unit: String,
+    val updated_at: String,
+    val vendor: String
+)

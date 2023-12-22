@@ -70,64 +70,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/_10sdp"
-                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
                     android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:text="Select PR"
-                            android:textColor="@color/textcolor" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_40sdp"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:layout_marginRight="@dimen/_5sdp"
-                            android:background="@drawable/edit_bg">
-
-                            <com.skydoves.powerspinner.PowerSpinnerView
-                                android:id="@+id/prSpinner"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:background="@android:color/transparent"
-                                android:entries="@array/genderArray"
-                                android:gravity="center_vertical"
-                                android:hint="Select PR"
-                                android:padding="10dp"
-                                android:textColor="#858484"
-                                android:textColorHint="#C8C5C5"
-                                android:textSize="13sp"
-                                app:spinner_arrow_gravity="end"
-                                app:spinner_arrow_padding="8dp"
-                                app:spinner_arrow_tint="@color/purple_200"
-                                app:spinner_divider_color="@color/purple_200"
-                                app:spinner_divider_show="true"
-                                app:spinner_divider_size="0.4dp"
-                                app:spinner_popup_animation="dropdown"
-                                app:spinner_popup_background="#fff"
-                                app:spinner_popup_elevation="14dp" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/prError"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="*Please enter age"
-                            android:textColor="#B51414"
-                            android:textSize="12sp"
-                            android:visibility="gone" />
-                    </LinearLayout>
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -182,6 +126,64 @@
                             android:textSize="12sp"
                             android:visibility="gone" />
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Select PR"
+                            android:textColor="@color/textcolor" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:background="@drawable/edit_bg">
+
+                            <com.skydoves.powerspinner.PowerSpinnerView
+                                android:id="@+id/prSpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:background="@android:color/transparent"
+                                android:entries="@array/genderArray"
+                                android:gravity="center_vertical"
+                                android:hint="Select PR"
+                                android:padding="10dp"
+                                android:textColor="#858484"
+                                android:textColorHint="#C8C5C5"
+                                android:textSize="13sp"
+                                app:spinner_arrow_gravity="end"
+                                app:spinner_arrow_padding="8dp"
+                                app:spinner_arrow_tint="@color/purple_200"
+                                app:spinner_divider_color="@color/purple_200"
+                                app:spinner_divider_show="true"
+                                app:spinner_divider_size="0.4dp"
+                                app:spinner_popup_animation="dropdown"
+                                app:spinner_popup_background="#fff"
+                                app:spinner_popup_elevation="14dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/prError"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="*Please enter age"
+                            android:textColor="#B51414"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+
+
                 </LinearLayout>
 
                 <TextView

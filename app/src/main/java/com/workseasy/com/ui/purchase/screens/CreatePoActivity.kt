@@ -25,7 +25,6 @@ class CreatePoActivity : AppCompatActivity() {
     var conditionDto: List<CondionDataItem>? = null
     var previousconditionDto :List<PreviousConditionDataItem>?=null
 
-
     var vendorArray = mutableListOf<String>()
     var vendorIdArray = mutableListOf<Int>()
     var viewModel: CreatePoViewModel ?=null

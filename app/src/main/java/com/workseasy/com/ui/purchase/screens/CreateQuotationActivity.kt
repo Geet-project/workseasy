@@ -171,8 +171,6 @@ class CreateQuotationActivity : AppCompatActivity() {
                             gradeDto = dataSate.data.data.grades;
                             paymentTermDto = dataSate.data.data.paymentTerms;
                             vendorDto = dataSate.data.data.vendors;
-
-
                             setMakeSpinner(makeDto!!);
                             setGradeSpinner(gradeDto!!)
                             setPaymentSpinner(paymentTermDto!!)
@@ -185,11 +183,6 @@ class CreateQuotationActivity : AppCompatActivity() {
                         }
                     } else {
                         binding.progressbar.visibility = View.GONE
-//                        Toast.makeText(
-//                            activity,
-//                            "" + dataSate.data.error,
-//                            Toast.LENGTH_SHORT
-//                        ).show()
                     }
                 }
 
@@ -275,8 +268,6 @@ class CreateQuotationActivity : AppCompatActivity() {
 
                 is com.workseasy.com.network.DataState.Error -> {
                     binding.progressbar.visibility = View.GONE
-//                    Toast.makeText(activity, "" + dataSate.exception, Toast.LENGTH_SHORT)
-//                        .show()
                 }
             }
         }

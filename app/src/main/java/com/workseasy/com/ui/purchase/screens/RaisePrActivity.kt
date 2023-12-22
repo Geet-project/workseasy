@@ -9,16 +9,18 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.loader.content.CursorLoader
 import com.hr.hrmanagement.R
@@ -33,7 +35,7 @@ import okhttp3.RequestBody
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.IOException
-import java.util.Calendar
+import java.util.*
 
 class RaisePrActivity : AppCompatActivity() {
     lateinit var _binding: ActivityRaisePrBinding
@@ -59,7 +61,12 @@ class RaisePrActivity : AppCompatActivity() {
     var itemId = mutableListOf<Int>()
 
     var makeArray = mutableListOf<String>()
-    var gradeArray = mutableListOf<String>()
+    var gradeArray = ArrayList<String>()
+
+    var selectedGradePostionArray = ArrayList<Int>()
+    var selectedGradeArray = ArrayList<String>()
+
+
     val viewModel: RaisePrViewModel by viewModels()
 
 
@@ -74,6 +81,9 @@ class RaisePrActivity : AppCompatActivity() {
         callApiForItemList()
         itemResponseHandle()
         setListeners()
+        _binding.itemSpinner.setTitle("Select Item")
+        _binding.itemSpinner.setPositiveButton("OK");
+
     }
 
 
@@ -94,15 +104,26 @@ class RaisePrActivity : AppCompatActivity() {
             PhotoPathUri = null
         }
 
-        binding.itemSpinner.setOnSpinnerItemSelectedListener <String> { oldIndex, oldItem, newIndex, newText ->
-            Log.e("stateSpin", ""+oldIndex+oldItem+newIndex+newText)
-            selectedItem = newText
-            var index = itemArray.indexOf(selectedItem)
-            var selectedItemId = itemId.get(index)
-            callApiForPrAsset(selectedItemId)
-            AssetResponseHandle()
-            binding.itemError.visibility = View.GONE
-        }
+        binding.itemSpinner.onItemSelectedListener = (object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                selectedItem = itemArray.get(p2);
+                var index = itemArray.indexOf(selectedItem)
+                var selectedItemId = itemId.get(index)
+                callApiForPrAsset(selectedItemId)
+                AssetResponseHandle()
+                binding.itemError.visibility = View.GONE
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+            }
+
+        })
+
+//        binding.itemSpinner.onItemSelectedListener <String> { oldIndex, oldItem, newIndex, newText ->
+//            Log.e("stateSpin", ""+oldIndex+oldItem+newIndex+newText)
+//            selectedItem = newText
+//
+//        }
 
         binding.makeSpinner.setOnSpinnerItemSelectedListener<String> { oldIndex, oldItem, newIndex, newText ->
             Log.e("stateSpin", ""+oldIndex+oldItem+newIndex+newText)
@@ -111,12 +132,14 @@ class RaisePrActivity : AppCompatActivity() {
 
         }
 
-        binding.gradeSpinner.setOnSpinnerItemSelectedListener<String> { oldIndex, oldItem, newIndex, newText ->
-            Log.e("stateSpin", ""+oldIndex+oldItem+newIndex+newText)
-            selectedGrade = newText
-            binding.gradeError.visibility = View.GONE
+//        binding.gradeSpinner.setOnSpinnerItemSelectedListener<String> { oldIndex, oldItem, newIndex, newText ->
+//            Log.e("stateSpin", ""+oldIndex+oldItem+newIndex+newText)
+//            selectedGrade = newText
+//            binding.gradeError.visibility = View.GONE
+//
+//        }
 
-        }
+
 
 
 
@@ -125,6 +148,11 @@ class RaisePrActivity : AppCompatActivity() {
             var unit = binding.UnitEt.text.toString()
             var delivery = binding.DeliveryEt.text.toString()
             var reasonLeaving = binding.RemarkEt.text.toString()
+
+            for (i in 0 until selectedGradePostionArray!!.size) {
+                selectedGradeArray.add(gradeArray.get(selectedGradePostionArray.get(i)))
+            }
+
             if(selectedItem==null)
             {
                 binding.itemError.visibility = View.VISIBLE
@@ -286,15 +314,16 @@ class RaisePrActivity : AppCompatActivity() {
         }
     }
 
-    fun callApiForRaisePr(item: RequestBody,
-                          make: RequestBody,
-                          gender: RequestBody,
-                          delivery: RequestBody,
-                          quantity: RequestBody,
-                          unit: RequestBody,
-                          remark: RequestBody,
-                          photo : MultipartBody.Part?,
-                          )
+    fun callApiForRaisePr(
+        item: RequestBody,
+        make: RequestBody,
+        gender: RequestBody,
+        delivery: RequestBody,
+        quantity: RequestBody,
+        unit: RequestBody,
+        remark: RequestBody,
+        photo: MultipartBody.Part?,
+    )
     {
         viewModel.raisePr(item,make, gender, delivery, quantity, unit, remark, photo, this)
     }
@@ -419,7 +448,10 @@ class RaisePrActivity : AppCompatActivity() {
             itemArray?.add(itemList[i].name)
             itemId?.add(itemList[i].id)
         }
-        binding.itemSpinner.setItems(itemArray!!.toList() )
+        binding.itemSpinner.adapter = ArrayAdapter<Any?>(
+            this@RaisePrActivity,
+            android.R.layout.simple_spinner_dropdown_item, itemArray.toList()
+        )
 
     }
 
@@ -474,7 +506,14 @@ class RaisePrActivity : AppCompatActivity() {
         for (i in 0 until gradeList!!.size) {
             gradeArray?.add(gradeList[i])
         }
-        binding.gradeSpinner.setItems(gradeArray!!.toList() )
+
+        val testDataList = gradeArray
+        with(binding) {
+            gradeSpinner.buildCheckedSpinner(testDataList) {
+                    selectedPositionList, displayString ->
+                selectedGradePostionArray = selectedPositionList
+            }
+        }
 
     }
 

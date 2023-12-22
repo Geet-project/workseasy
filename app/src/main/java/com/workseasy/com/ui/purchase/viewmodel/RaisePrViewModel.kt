@@ -32,11 +32,11 @@ class RaisePrViewModel : com.workseasy.com.base.BaseViewModel(){
     private  val _updatePrResponse: MutableLiveData<com.workseasy.com.network.DataState<com.workseasy.com.network.GenericResponse<Pr>>> = MutableLiveData()
     val updatePrResponse: LiveData<com.workseasy.com.network.DataState<com.workseasy.com.network.GenericResponse<Pr>>> = _updatePrResponse
 
-    private  val _grnstoreResponse: MutableLiveData<com.workseasy.com.network.DataState<com.workseasy.com.network.GenericResponse<GrnResponse>>> = MutableLiveData()
-    val grnstoreResponse: LiveData<com.workseasy.com.network.DataState<com.workseasy.com.network.GenericResponse<GrnResponse>>> = _grnstoreResponse
+    private  val _grnstoreResponse: MutableLiveData<com.workseasy.com.network.DataState<CreateQuotationResponse>> = MutableLiveData()
+    val grnstoreResponse: LiveData<com.workseasy.com.network.DataState<CreateQuotationResponse>> = _grnstoreResponse
 
-    private  val _consumptionstoreResponse: MutableLiveData<com.workseasy.com.network.DataState<com.workseasy.com.network.GenericResponse<Pr>>> = MutableLiveData()
-    val consumptionstoreResponse: LiveData<com.workseasy.com.network.DataState<com.workseasy.com.network.GenericResponse<Pr>>> = _consumptionstoreResponse
+    private  val _consumptionstoreResponse: MutableLiveData<com.workseasy.com.network.DataState<CreateQuotationResponse>> = MutableLiveData()
+    val consumptionstoreResponse: LiveData<com.workseasy.com.network.DataState<CreateQuotationResponse>> = _consumptionstoreResponse
 
     private val _quotationResponse: MutableLiveData<com.workseasy.com.network.DataState<QuotationApprovedResponse>> = MutableLiveData()
     val quotationResponse : LiveData<com.workseasy.com.network.DataState<QuotationApprovedResponse>> = _quotationResponse
@@ -52,6 +52,19 @@ class RaisePrViewModel : com.workseasy.com.base.BaseViewModel(){
 
     private val _getAssetsListResponse : MutableLiveData<com.workseasy.com.network.DataState<GetItemAssetsResponse>> = MutableLiveData()
     val getAssetsListResponse : LiveData<com.workseasy.com.network.DataState<GetItemAssetsResponse>> = _getAssetsListResponse
+
+    private  val _grnItemDataResponse: MutableLiveData<com.workseasy.com.network.DataState<GrnItemDataResponse>> = MutableLiveData()
+    val grnItemDataResponse: LiveData<com.workseasy.com.network.DataState<GrnItemDataResponse>> = _grnItemDataResponse
+
+    private  val _grnPrListDataResponse: MutableLiveData<com.workseasy.com.network.DataState<GrnPoListData>> = MutableLiveData()
+    val grnPrListDataResponse: LiveData<com.workseasy.com.network.DataState<GrnPoListData>> = _grnPrListDataResponse
+
+    private  val _consumptionListDataResponse: MutableLiveData<com.workseasy.com.network.DataState<ConsumptionItemResponse>> = MutableLiveData()
+    val consumptionListDataResponse: LiveData<com.workseasy.com.network.DataState<ConsumptionItemResponse>> = _consumptionListDataResponse
+
+    private  val _quotationListResponse: MutableLiveData<com.workseasy.com.network.DataState<QuotationApprovalListResponse>> = MutableLiveData()
+    val quotationListResponse: LiveData<com.workseasy.com.network.DataState<QuotationApprovalListResponse>> = _quotationListResponse
+
 
     var repository: com.workseasy.com.repository.PurchaseRepository?=null
     private var networkHelper: NetworkHelper?=null
@@ -389,6 +402,98 @@ class RaisePrViewModel : com.workseasy.com.base.BaseViewModel(){
             }
         } else {
             _getAssetsListResponse.postValue(
+                com.workseasy.com.network.DataState.Error(
+                    exception = NetworkErrorException("Connection Error")
+                )
+            )
+        }
+    }
+
+    @SuppressLint("NewApi")
+    fun getGrnItemData(context: Context) = viewModelScope.launch {
+        _grnItemDataResponse.postValue(com.workseasy.com.network.DataState.Loading)
+        networkHelper = NetworkHelper(context)
+        if (networkHelper!!.isNetworkConnected()) {
+            try {
+                _grnItemDataResponse.value = com.workseasy.com.network.DataState.Success(
+                    data = repository!!.getGrnItemData()
+                )
+            } catch (exception: Exception) {
+                _grnItemDataResponse.value = com.workseasy.com.network.DataState.Error(
+                    exception = exception
+                )
+            }
+        } else {
+            _grnItemDataResponse.postValue(
+                com.workseasy.com.network.DataState.Error(
+                    exception = NetworkErrorException("Connection Error")
+                )
+            )
+        }
+    }
+
+    @SuppressLint("NewApi")
+    fun getGrnPoData(poId: Int,context: Context) = viewModelScope.launch {
+        _grnPrListDataResponse.postValue(com.workseasy.com.network.DataState.Loading)
+        networkHelper = NetworkHelper(context)
+        if (networkHelper!!.isNetworkConnected()) {
+            try {
+                _grnPrListDataResponse.value = com.workseasy.com.network.DataState.Success(
+                    data = repository!!.getGrnPoData(poId)
+                )
+            } catch (exception: Exception) {
+                _grnPrListDataResponse.value = com.workseasy.com.network.DataState.Error(
+                    exception = exception
+                )
+            }
+        } else {
+            _grnPrListDataResponse.postValue(
+                com.workseasy.com.network.DataState.Error(
+                    exception = NetworkErrorException("Connection Error")
+                )
+            )
+        }
+    }
+
+    @SuppressLint("NewApi")
+    fun getConsumptionItemData(context: Context)= viewModelScope.launch {
+        _consumptionListDataResponse.postValue(com.workseasy.com.network.DataState.Loading)
+        networkHelper = NetworkHelper(context)
+        if (networkHelper!!.isNetworkConnected()) {
+            try {
+                _consumptionListDataResponse.value = com.workseasy.com.network.DataState.Success(
+                    data = repository!!.getConsumptionItemData()
+                )
+            } catch (exception: Exception) {
+                _consumptionListDataResponse.value = com.workseasy.com.network.DataState.Error(
+                    exception = exception
+                )
+            }
+        } else {
+            _consumptionListDataResponse.postValue(
+                com.workseasy.com.network.DataState.Error(
+                    exception = NetworkErrorException("Connection Error")
+                )
+            )
+        }
+    }
+
+    @SuppressLint("NewApi")
+    fun getQuotationForApproval(context: Context)= viewModelScope.launch {
+        _quotationListResponse.postValue(com.workseasy.com.network.DataState.Loading)
+        networkHelper = NetworkHelper(context)
+        if (networkHelper!!.isNetworkConnected()) {
+            try {
+                _quotationListResponse.value = com.workseasy.com.network.DataState.Success(
+                    data = repository!!.getQuotationForApproval()
+                )
+            } catch (exception: Exception) {
+                _quotationListResponse.value = com.workseasy.com.network.DataState.Error(
+                    exception = exception
+                )
+            }
+        } else {
+            _quotationListResponse.postValue(
                 com.workseasy.com.network.DataState.Error(
                     exception = NetworkErrorException("Connection Error")
                 )

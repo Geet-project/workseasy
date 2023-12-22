@@ -173,6 +173,7 @@
         <entry key="..\:/TechosoftProjects/HrManagment/app/src/main/res/layout/step5_dialog.xml" value="0.17552083333333332" />
         <entry key="..\:/TechosoftProjects/HrManagment/app/src/main/res/layout/step_5_layout_item.xml" value="0.17552083333333332" />
         <entry key="..\:/TechosoftProjects/HrManagment/app/src/main/res/menu/nav_menu.xml" value="0.17552083333333332" />
+        <entry key="app/src/main/res/drawable-ldpi/edit_bg.xml" value="0.187" />
         <entry key="app/src/main/res/drawable-ldpi/edit_rect_dp.xml" value="0.177" />
         <entry key="app/src/main/res/drawable/topgradient_bg.xml" value="0.1735" />
         <entry key="app/src/main/res/layout/activity_about.xml" value="0.14583333333333334" />
@@ -185,7 +186,7 @@
         <entry key="app/src/main/res/layout/activity_auto_attendance.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.14583333333333334" />
         <entry key="app/src/main/res/layout/activity_change_password.xml" value="0.14583333333333334" />
-        <entry key="app/src/main/res/layout/activity_consumption_entry.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/layout/activity_consumption_entry.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_create_po.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_create_quotation.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_employee_details.xml" value="0.19375" />
@@ -196,7 +197,7 @@
         <entry key="app/src/main/res/layout/activity_employee_registration_step5.xml" value="0.14221014492753623" />
         <entry key="app/src/main/res/layout/activity_employee_step1.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_famili_detail.xml" value="0.41150442477876104" />
-        <entry key="app/src/main/res/layout/activity_grn_entry.xml" value="0.14221014492753623" />
+        <entry key="app/src/main/res/layout/activity_grn_entry.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_hr_admin.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_hr_details.xml" value="0.19375" />
@@ -209,7 +210,8 @@
         <entry key="app/src/main/res/layout/activity_prpending_quotation.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_purchase_procurement.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_quotation.xml" value="0.19375" />
-        <entry key="app/src/main/res/layout/activity_raise_pr.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/activity_quotation_list.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/activity_raise_pr.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_salary_history.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_salary_structure.xml" value="0.23034055727554179" />
         <entry key="app/src/main/res/layout/activity_service_form.xml" value="0.19375" />
@@ -243,16 +245,17 @@
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/fragment_view_salary.xml" value="0.2" />
         <entry key="app/src/main/res/layout/item_emplist.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/leave_request_approve_item.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/leave_request_approve_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/leave_request_dialog.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/leave_request_item.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/nav_layout.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/noti_layout.xml" value="0.14583333333333334" />
         <entry key="app/src/main/res/layout/pr_list_layout.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/quotation_item.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/layout/quotation_list_layout.xml" value="0.5" />
         <entry key="app/src/main/res/layout/salary_approval_item.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/salary_layout_item.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/step5_dialog.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/layout/step5_dialog.xml" value="0.25" />
         <entry key="app/src/main/res/layout/step_5_layout_item.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/work_exp_dialog.xml" value="0.22" />
         <entry key="app/src/main/res/layout/work_exp_layout.xml" value="0.15904232578024796" />

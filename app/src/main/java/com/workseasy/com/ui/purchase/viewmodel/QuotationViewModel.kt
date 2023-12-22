@@ -17,6 +17,9 @@ class QuotationViewModel : com.workseasy.com.base.BaseViewModel(){
     private  val _createquotationResponse: MutableLiveData<com.workseasy.com.network.DataState<CreateQuotationResponse>> = MutableLiveData()
     val createquotationResponse: LiveData<com.workseasy.com.network.DataState<CreateQuotationResponse>> = _createquotationResponse
 
+    private  val _grnItemDataResponse: MutableLiveData<com.workseasy.com.network.DataState<GrnItemDataResponse>> = MutableLiveData()
+    val grnItemDataResponse: LiveData<com.workseasy.com.network.DataState<GrnItemDataResponse>> = _grnItemDataResponse
+
     var repository: com.workseasy.com.repository.PurchaseRepository?=null
     private var networkHelper: NetworkHelper?=null
     init {
@@ -46,4 +49,6 @@ class QuotationViewModel : com.workseasy.com.base.BaseViewModel(){
             )
         }
     }
+
+
 }

@@ -46,6 +46,9 @@
         android:theme="@style/Theme.HrManagement"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="com.workseasy.com.ui.purchase.screens.QuotationListActivity"
+            android:exported="false" />
+        <activity
             android:name=".ApprovePoActivity"
             android:exported="false" />
         <activity
@@ -59,14 +62,12 @@
             android:exported="false" />
         <activity
             android:name=".PrPendingQuotationActivity"
-            android:exported="false" />
-
-        <activity
-            android:name="com.workseasy.com.ui.purchase.screens.CreatePoActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.workseasy.com.ui.purchase.screens.ApprovePoActivity"
-            android:exported="false" />
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name="com.workseasy.com.ui.purchase.screens.CreatePoActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name="com.workseasy.com.ui.purchase.screens.ApprovePoActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name="com.workseasy.com.ui.hradmin.attendance.AutoAttendanceActivity"
             android:exported="false" />
@@ -103,25 +104,25 @@
             android:name="com.workseasy.com.ui.accounts.PaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".QuotationActivity"
+            android:name="com.workseasy.com.ui.purchase.screens.QuotationActivity"
             android:exported="false" />
         <activity
-            android:name=".PrApprovalActivity"
+            android:name="com.workseasy.com.ui.purchase.screens.PrApprovalActivity"
             android:exported="false" />
         <activity
-            android:name=".PrListingActiivty"
+            android:name="com.workseasy.com.ui.purchase.screens.PrListingActiivty"
             android:exported="false" />
         <activity
-            android:name=".ConsumptionEntryActivity"
+            android:name="com.workseasy.com.ui.purchase.screens.ConsumptionEntryActivity"
             android:exported="false" />
         <activity
-            android:name=".GrnEntryActivity"
+            android:name="com.workseasy.com.ui.purchase.screens.GrnEntryActivity"
             android:exported="false" />
         <activity
-            android:name=".RaisePrActivity"
+            android:name="com.workseasy.com.ui.purchase.screens.RaisePrActivity"
             android:exported="false" />
         <activity
-            android:name=".PurchaseProcurementActivity"
+            android:name="com.workseasy.com.ui.purchase.screens.PurchaseProcurementActivity"
             android:exported="false" />
         <activity
             android:name="com.workseasy.com.ui.hradmin.attendance.AttendanceForm3Activity"

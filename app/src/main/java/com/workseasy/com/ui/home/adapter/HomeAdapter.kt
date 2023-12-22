@@ -22,13 +22,7 @@ import com.workseasy.com.ui.hradmin.employeeRegistration.response.AdharUniqueDto
 import com.workseasy.com.ui.hradmin.employeelist.EmployeeListActivity
 import com.workseasy.com.ui.login.LoginViewModel
 import com.workseasy.com.ui.login.response.DataX
-import com.workseasy.com.ui.purchase.screens.ConsumptionEntryActivity
-import com.workseasy.com.ui.purchase.screens.CreatePoActivity
-import com.workseasy.com.ui.purchase.screens.GrnEntryActivity
-import com.workseasy.com.ui.purchase.screens.PrApprovalActivity
-import com.workseasy.com.ui.purchase.screens.PrListingActiivty
-import com.workseasy.com.ui.purchase.screens.QuotationActivity
-import com.workseasy.com.ui.purchase.screens.RaisePrActivity
+import com.workseasy.com.ui.purchase.screens.*
 import com.workseasy.com.utils.GenericTextWatcher
 import com.workseasy.com.utils.SharedPref
 import de.hdodenhof.circleimageview.CircleImageView
@@ -142,7 +136,7 @@ class HomeAdapter(context: Context,private val loginViewModel: LoginViewModel,
 //                    .putExtra("formtype", 5)
                 context.startActivity(intent)
             } else if(homelist.get(position)!!.name=="Quotation Approval") {
-                val intent = Intent(context, QuotationActivity::class.java)
+                val intent = Intent(context, QuotationListActivity::class.java)
 //                    .putExtra("comeFrom", "Attendance")
 //                    .putExtra("formtype", 5)
                 context.startActivity(intent)
@@ -158,6 +152,10 @@ class HomeAdapter(context: Context,private val loginViewModel: LoginViewModel,
                 context.startActivity(intent)
             }else if(homelist.get(position)!!.name=="Create PO") {
                 val intent = Intent(context, CreatePoActivity::class.java)
+//                    .putExtra("formtype", 5)
+                context.startActivity(intent)
+            }else if(homelist.get(position)!!.name=="PO Approval") {
+                val intent = Intent(context, ApprovePoActivity::class.java)
 //                    .putExtra("formtype", 5)
                 context.startActivity(intent)
             }

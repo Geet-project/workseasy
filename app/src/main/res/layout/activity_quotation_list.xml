@@ -47,7 +47,7 @@
                         android:layout_toRightOf="@id/backBtn"
                         android:layout_weight="1"
                         android:padding="1dp"
-                        android:text="Approve PO"
+                        android:text="Quotation"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />

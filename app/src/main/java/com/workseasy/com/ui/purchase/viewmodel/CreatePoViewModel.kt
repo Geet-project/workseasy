@@ -26,6 +26,9 @@ class CreatePoViewModel: com.workseasy.com.base.BaseViewModel() {
     private  val _poListResponse: MutableLiveData<DataState<PoListResponse>> = MutableLiveData()
     val poListResponse: LiveData<DataState<PoListResponse>> = _poListResponse
 
+    private  val _changePoStatusResponse: MutableLiveData<DataState<CreateQuotationResponse>> = MutableLiveData()
+    val changePoStatusResponse: LiveData<DataState<CreateQuotationResponse>> = _changePoStatusResponse
+
 
     var repository: PoRepository?=null
 
@@ -125,6 +128,31 @@ class CreatePoViewModel: com.workseasy.com.base.BaseViewModel() {
             }
         } else {
             _poListResponse.postValue(
+                com.workseasy.com.network.DataState.Error(
+                    exception = NetworkErrorException("Connection Error")
+                )
+            )
+        }
+    }
+
+    @SuppressLint("NewApi")
+    fun changePoStatus(changePoStatusDto: ChangePoStatusDto,
+        context: Context
+    )= viewModelScope.launch {
+        _changePoStatusResponse.postValue(com.workseasy.com.network.DataState.Loading)
+        networkHelper = NetworkHelper(context)
+        if (networkHelper!!.isNetworkConnected()) {
+            try {
+                _changePoStatusResponse.value = com.workseasy.com.network.DataState.Success(
+                    data = repository!!.changePoStatus(changePoStatusDto)
+                )
+            } catch (exception: Exception) {
+                _poListResponse.value = com.workseasy.com.network.DataState.Error(
+                    exception = exception
+                )
+            }
+        } else {
+            _changePoStatusResponse.postValue(
                 com.workseasy.com.network.DataState.Error(
                     exception = NetworkErrorException("Connection Error")
                 )

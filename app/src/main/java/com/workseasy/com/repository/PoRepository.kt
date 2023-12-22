@@ -1,6 +1,7 @@
 package com.workseasy.com.repository
 
 import com.hr.demoapp.network.RemoteDataSource
+import com.workseasy.com.ui.purchase.response.ChangePoStatusDto
 import com.workseasy.com.ui.purchase.response.CreatePoDto
 
 class PoRepository {
@@ -13,6 +14,9 @@ class PoRepository {
     suspend fun createPoDto(createPoDto: CreatePoDto) = client!!.createPo(createPoDto)
 
     suspend fun getPoList() = client!!.getPoList()
+
+    suspend fun changePoStatus(changePoStatusDto: ChangePoStatusDto) = client!!.changePoStatus(changePoStatusDto)
+
 
 
 

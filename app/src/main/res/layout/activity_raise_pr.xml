@@ -89,29 +89,13 @@
                             android:layout_marginRight="@dimen/_5sdp"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:background="@drawable/edit_bg">
-                            <com.skydoves.powerspinner.PowerSpinnerView
+                            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@android:color/transparent"
                                 android:layout_gravity="center_vertical"
-                                android:gravity="center_vertical"
-                                android:padding="10dp"
-                                android:hint="Select Item"
-                                android:textColor="#858484"
                                 android:id="@+id/itemSpinner"
-                                android:textColorHint="#C8C5C5"
-                                android:textSize="13sp"
+                                android:gravity="center"
+                                android:layout_height="wrap_content" />
 
-                                android:entries="@array/genderArray"
-                                app:spinner_arrow_gravity="end"
-                                app:spinner_arrow_padding="8dp"
-                                app:spinner_arrow_tint="@color/purple_200"
-                                app:spinner_divider_color="@color/purple_200"
-                                app:spinner_divider_show="true"
-                                app:spinner_divider_size="0.4dp"
-                                app:spinner_popup_animation="dropdown"
-                                app:spinner_popup_background="#fff"
-                                app:spinner_popup_elevation="14dp" />
                         </LinearLayout>
                         <TextView
                             android:id="@+id/itemError"
@@ -122,6 +106,14 @@
                             android:textSize="12sp"
                             android:visibility="gone" />
                     </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:orientation="horizontal">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -173,46 +165,39 @@
                             android:textSize="12sp"
                             android:visibility="gone" />
                     </LinearLayout>
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginLeft="@dimen/_10sdp"
-                    android:text="Grade"
-                    android:textColor="@color/textcolor" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_marginRight="@dimen/_10sdp"
-                    android:layout_marginLeft="@dimen/_10sdp"
-                    android:background="@drawable/edit_bg">
-                    <com.skydoves.powerspinner.PowerSpinnerView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical"
-                        android:padding="10dp"
-                        android:hint="Select Grade"
-                        android:textColor="#858484"
-                        android:id="@+id/gradeSpinner"
-                        android:textColorHint="#C8C5C5"
-                        android:textSize="13sp"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:text="Grade"
+                            android:textColor="@color/textcolor" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginHorizontal="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/edit_bg">
+                            <com.puskal.multiselectspinner.MultiSelectSpinnerView
+                                android:id="@+id/gradeSpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:confirmTextColor="@color/purple_200"
+                                android:layout_gravity="center"
+                                tools:ignore="MissingClass" />
 
-                        android:entries="@array/genderArray"
-                        app:spinner_arrow_gravity="end"
-                        app:spinner_arrow_padding="8dp"
-                        app:spinner_arrow_tint="@color/purple_200"
-                        app:spinner_divider_color="@color/purple_200"
-                        app:spinner_divider_show="true"
-                        app:spinner_divider_size="0.4dp"
-                        app:spinner_popup_animation="dropdown"
-                        app:spinner_popup_background="#fff"
-                        app:spinner_popup_elevation="14dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
                 </LinearLayout>
+
+
 
                 <TextView
                     android:id="@+id/gradeError"
@@ -422,6 +407,7 @@
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="5dp"
                         android:src="@drawable/ic_cancel" />
+
                 </RelativeLayout>
 
                 <Button
@@ -435,9 +421,6 @@
                     android:layout_marginBottom="@dimen/_20sdp"
                     android:gravity="center|center_vertical"
                     android:text="Submit" />
-
-
-
             </LinearLayout>
         </ScrollView>
 
