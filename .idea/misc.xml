@@ -175,6 +175,7 @@
         <entry key="..\:/TechosoftProjects/HrManagment/app/src/main/res/menu/nav_menu.xml" value="0.17552083333333332" />
         <entry key="app/src/main/res/drawable-ldpi/edit_bg.xml" value="0.187" />
         <entry key="app/src/main/res/drawable-ldpi/edit_rect_dp.xml" value="0.177" />
+        <entry key="app/src/main/res/drawable/bluelinear.xml" value="0.1825" />
         <entry key="app/src/main/res/drawable/topgradient_bg.xml" value="0.1735" />
         <entry key="app/src/main/res/layout/activity_about.xml" value="0.14583333333333334" />
         <entry key="app/src/main/res/layout/activity_account.xml" value="0.14583333333333334" />
@@ -209,7 +210,7 @@
         <entry key="app/src/main/res/layout/activity_pr_listing_actiivty.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_prpending_quotation.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_purchase_procurement.xml" value="0.19375" />
-        <entry key="app/src/main/res/layout/activity_quotation.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/activity_quotation.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_quotation_list.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_raise_pr.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_salary_history.xml" value="0.19375" />
@@ -226,6 +227,7 @@
         <entry key="app/src/main/res/layout/approve_layout.xml" value="0.33" />
         <entry key="app/src/main/res/layout/arrow_layout.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/content_salary_structure.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/custom_success_toast.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/custom_toast_error_layout.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/dashboard_home_layout.xml" value="0.14583333333333334" />
@@ -251,8 +253,10 @@
         <entry key="app/src/main/res/layout/nav_layout.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/noti_layout.xml" value="0.14583333333333334" />
         <entry key="app/src/main/res/layout/pr_list_layout.xml" value="0.19375" />
-        <entry key="app/src/main/res/layout/quotation_item.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/layout/quotation_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/quotation_list_layout.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/quotation_nested_listitem.xml" value="0.4177997527812114" />
+        <entry key="app/src/main/res/layout/quotation_vendorname_item.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/salary_approval_item.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/salary_layout_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/step5_dialog.xml" value="0.25" />

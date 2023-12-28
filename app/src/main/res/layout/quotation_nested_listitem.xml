@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/headValue"
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text=""
+        android:textColor="@color/textcolor"
+        android:textStyle="" />
+
+    <View
+        android:layout_width="120dp"
+        android:layout_height="0.2dp"
+        android:background="#E9E9E9" />
+
+    <TextView
+        android:id="@+id/vendorName"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="Vendor Name"
+        android:textColor="@color/textcolor"
+        android:textStyle="" />
+
+    <View
+        android:layout_width="120dp"
+        android:layout_height="0.2dp"
+        android:background="#E9E9E9" />
+
+    <TextView
+        android:id="@+id/requiredDate"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="Required Date"
+        android:textColor="@color/textcolor"
+        android:textStyle="" />
+
+    <View
+        android:layout_width="120dp"
+        android:layout_height="0.2dp"
+        android:background="#E9E9E9" />
+
+    <TextView
+        android:id="@+id/discValue"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="Disc"
+        android:textColor="@color/textcolor"
+        android:textStyle="" />
+
+    <View
+        android:layout_width="120dp"
+        android:layout_height="0.2dp"
+        android:background="#E9E9E9" />
+
+    <TextView
+        android:id="@+id/qtyValue"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="Qty"
+        android:textColor="@color/textcolor"
+        android:textStyle="" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="#E9E9E9" />
+
+    <TextView
+        android:id="@+id/rateValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="Rate"
+        android:textColor="@color/textcolor"
+        android:textStyle="" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="#E9E9E9" />
+
+    <TextView
+        android:id="@+id/gstValue"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="GST"
+        android:textColor="@color/textcolor"
+        android:textStyle="" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="#E9E9E9" />
+
+    <TextView
+        android:id="@+id/fraightValue"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="Fraight"
+        android:textColor="@color/textcolor"
+        android:textStyle="" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="#E9E9E9" />
+
+    <TextView
+        android:id="@+id/orderValue"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="Order Value"
+        android:textColor="@color/textcolor"
+        android:textStyle="" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="#E9E9E9" />
+
+    <TextView
+        android:id="@+id/statusValue"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="Status"
+        android:textColor="@color/textcolor"
+        android:textStyle="" />
+
+
+</LinearLayout>

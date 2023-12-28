@@ -13,6 +13,7 @@ import com.hr.hrmanagement.databinding.ActivityQuotationListBinding
 import com.workseasy.com.ui.hradmin.employeelist.EmployeeListActivity
 import com.workseasy.com.ui.purchase.adapter.ApprovePoAdapter
 import com.workseasy.com.ui.purchase.adapter.QuotationApprovalListAdapter
+import com.workseasy.com.ui.purchase.adapter.QuotationNestedAdapter
 import com.workseasy.com.ui.purchase.viewmodel.RaisePrViewModel
 
 class QuotationListActivity : AppCompatActivity(),QuotationApprovalListAdapter.OnClickListener {
@@ -20,13 +21,15 @@ class QuotationListActivity : AppCompatActivity(),QuotationApprovalListAdapter.O
     lateinit var binding: ActivityQuotationListBinding
     var viewModel: RaisePrViewModel?=null
     var progressDialog: ProgressDialog?=null
-    var quotationListAdapter: QuotationApprovalListAdapter ? =null
+    var quotationListAdapter: QuotationApprovalListAdapter ? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_quotation_list)
         viewModel = ViewModelProviders.of(this).get(RaisePrViewModel::class.java)
         quotationListAdapter = QuotationApprovalListAdapter(this, this)
+
         apiCallForQuotationApproval()
         responseHandle()
     }

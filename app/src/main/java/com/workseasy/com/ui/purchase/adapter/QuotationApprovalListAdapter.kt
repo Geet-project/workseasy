@@ -24,6 +24,7 @@ class QuotationApprovalListAdapter(context: Context,
     var dialog: AlertDialog? = null
     var sharedPref: SharedPref? = null
 
+
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val vandorName = itemView.findViewById<TextView>(R.id.vendorNameValue)
         val reqDateValue = itemView.findViewById<TextView>(R.id.reqDateValue)
@@ -35,6 +36,7 @@ class QuotationApprovalListAdapter(context: Context,
         val fraightValue = itemView.findViewById<TextView>(R.id.fraightValue)
         val orderValue = itemView.findViewById<TextView>(R.id.orderValue)
         val statusValue = itemView.findViewById<TextView>(R.id.statusValue)
+
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuotationApprovalListAdapter.ViewHolder {
@@ -48,20 +50,25 @@ class QuotationApprovalListAdapter(context: Context,
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+
+
         holder.vandorName.setText("Vendor Name:  "+quotationList.get(position)!!.name)
         holder.discValue.setText("Disc:  "+quotationList.get(position)!!.disc)
-        holder.qtyValue.setText("Disc:  "+quotationList.get(position)!!.quantity)
-        holder.rateValue.setText("Disc:  "+quotationList.get(position)!!.rate)
-        holder.gstValue.setText("Disc:  "+quotationList.get(position)!!.gst)
-        holder.fraightValue.setText("Disc:  "+quotationList.get(position)!!.fraight)
-        holder.orderValue.setText("Disc:  "+quotationList.get(position)!!.order_value)
-        holder.statusValue.setText("Disc:  "+quotationList.get(position)!!.status)
+        holder.qtyValue.setText("Qty:  "+quotationList.get(position)!!.quantity)
+        holder.rateValue.setText("Rate:  "+quotationList.get(position)!!.rate)
+        holder.gstValue.setText("GST:  "+quotationList.get(position)!!.gst)
+        holder.fraightValue.setText("Fraight:  "+quotationList.get(position)!!.fraight)
+        holder.orderValue.setText("Order Value:  "+quotationList.get(position)!!.order_value)
+        holder.statusValue.setText("Status:  "+quotationList.get(position)!!.status)
         holder.deliveryDateValue.setText("Delivery Date:  "+quotationList.get(position)!!.delivery_time)
 
         holder.reqDateValue.setText("Required Date:  "+quotationList.get(position)!!.delivery)
         holder.itemView.setOnClickListener {
             dataClicked!!.onClick()
         }
+
+
     }
 
     fun setData(data: ArrayList<QuotationApprovalListDataItem>?) {

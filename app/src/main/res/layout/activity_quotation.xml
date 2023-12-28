@@ -33,6 +33,7 @@
                     android:layout_width="@dimen/_30sdp"
                     android:layout_height="@dimen/_30sdp"
                     android:clickable="true"
+                    android:layout_toLeftOf="@id/approvebtn"
                     android:background="?selectableItemBackgroundBorderless"
                     android:layout_centerVertical="true"
                     android:src="@drawable/ic_baseline_arrow_circle_left_24" />
@@ -55,71 +56,79 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_10sdp"
-        android:orientation="vertical"
-        android:id="@+id/mainLayout"
-        android:visibility="visible"
-        android:background="@drawable/linear_bg">
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.2dp"
-            android:background="#E9E9E9"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.2dp"
-            android:background="#E9E9E9"/>
-        
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="horizontal"
-                android:scrollbarStyle="outsideInset"
-                android:id="@+id/quotatinRecycler"
-                tools:listitem="@layout/quotation_item"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-        </HorizontalScrollView>
-
-
+        android:fillViewport="true">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/ApproveRejectLayout"
-            android:layout_marginHorizontal="@dimen/_15sdp"
-            android:visibility="gone"
-            android:layout_marginBottom="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:orientation="horizontal">
-            <androidx.appcompat.widget.AppCompatButton
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:id="@+id/mainLayout"
+            android:visibility="visible"
+            android:background="@drawable/linear_bg">
+
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginRight="@dimen/_5sdp"
-                android:layout_weight="1"
-                android:id="@+id/approvebtn"
-                android:backgroundTint="@color/purple_200"
-                android:text="Approve"
-                android:textColor="#fff"
-                android:textAllCaps="false"
-                android:background="@drawable/edit_bg"/>
-            <androidx.appcompat.widget.AppCompatButton
+                android:layout_height="0.2dp"
+                android:background="#E9E9E9"/>
+
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginLeft="@dimen/_5sdp"
-                android:layout_weight="1"
-                android:id="@+id/rejectbtn"
-                android:backgroundTint="@color/red_color"
-                android:text="Reject"
-                android:textColor="#fff"
-                android:textAllCaps="false"
-                android:background="@drawable/edit_bg"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/vendorNameRecyclerView"
+                tools:listitem="@layout/quotation_vendorname_item"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"/>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/quotatinRecycler"
+                    android:visibility="visible"
+                    tools:listitem="@layout/quotation_item"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ApproveRejectLayout"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:id="@+id/approvebtn"
+                    android:backgroundTint="@color/purple_200"
+                    android:text="Approve"
+                    android:textColor="#fff"
+                    android:textAllCaps="false"
+                    android:background="@drawable/edit_bg"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:id="@+id/rejectbtn"
+                    android:backgroundTint="@color/red_color"
+                    android:text="Reject"
+                    android:textColor="#fff"
+                    android:textAllCaps="false"
+                    android:background="@drawable/edit_bg"/>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <ProgressBar
         android:layout_width="wrap_content"

@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.hr.hrmanagement.R
 import com.hr.hrmanagement.databinding.ActivityQuotationBinding
 import com.workseasy.com.ui.purchase.adapter.QuotationAdapter
+import com.workseasy.com.ui.purchase.adapter.QuotationNestedAdapter
+import com.workseasy.com.ui.purchase.adapter.QuotationVendorNameAdapter
 import com.workseasy.com.ui.purchase.response.QuotationApprovedListData
 import com.workseasy.com.ui.purchase.viewmodel.RaisePrViewModel
 import com.workseasy.com.utils.GenericTextWatcher
@@ -26,15 +28,15 @@ class QuotationActivity : AppCompatActivity() {
     var dialog: AlertDialog? = null
     var id : Int?=null
     var progressDialog: ProgressDialog?=null
-
-
+    var nestedAdapter: QuotationNestedAdapter? = null
+    var vendorNameAdapter:QuotationVendorNameAdapter?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_quotation)
         viewModel = ViewModelProviders.of(this).get(RaisePrViewModel::class.java)
-
         adapter = QuotationAdapter(this)
+        vendorNameAdapter = QuotationVendorNameAdapter(this)
         progressDialog = ProgressDialog(this)
         allBasicWorkLayouts()
         apiCallForQuotationList()
@@ -47,15 +49,6 @@ class QuotationActivity : AppCompatActivity() {
 
     fun allBasicWorkLayouts()
     {
-        val layoutManager = LinearLayoutManager(this)
-        binding.quotatinRecycler.adapter = adapter
-        binding.quotatinRecycler.layoutManager = layoutManager
-        binding.quotatinRecycler.setLayoutManager(
-            LinearLayoutManager(this,
-                LinearLayoutManager.VERTICAL,
-                false
-            )
-        )
 
         binding.approvebtn.setOnClickListener {
             showDialog("approve")
@@ -64,7 +57,6 @@ class QuotationActivity : AppCompatActivity() {
         binding.rejectbtn.setOnClickListener {
             showDialog("reject")
         }
-
     }
 
     fun apiCallForQuotationList()
@@ -80,20 +72,23 @@ class QuotationActivity : AppCompatActivity() {
 
     fun responseHandle()
     {
-        viewModel?.quotationResponse?.observe(this){ dataSate->
+        viewModel?.quotationResponse?.observe(this) { dataSate->
             when(dataSate)
             {
-                is com.workseasy.com.network.DataState.Success ->{
+                is com.workseasy.com.network.DataState.Success -> {
                     if(dataSate.data.code==200)
                     {
-                        id = dataSate.data.data.get(0).id
+                        id = dataSate.data.data.get(0)?.id
                         binding.progressbar.visibility = View.GONE
-
 
                         if(dataSate.data.data.size>0)
                         {
                             binding.mainLayout.visibility = View.VISIBLE
                             adapter!!.setData(dataSate.data.data)
+                            nestedAdapter!!.setData(dataSate.data.data)
+                            vendorNameAdapter!!.setData(dataSate.data.data)
+                            binding.quotatinRecycler.adapter = adapter
+                            binding.vendorNameRecyclerView.adapter = vendorNameAdapter
                             binding.noDataLayout.visibility = View.GONE
                         }else{
                             binding.mainLayout.visibility = View.GONE
@@ -123,17 +118,16 @@ class QuotationActivity : AppCompatActivity() {
         viewModel?.quotationUpdateResponse?.observe(this){ dataSate->
             when(dataSate)
             {
-                is com.workseasy.com.network.DataState.Success ->{
+                is com.workseasy.com.network.DataState.Success -> {
                     if(dataSate.data.status==200)
                     {
                         progressDialog?.dismiss()
                         dialog!!.dismiss()
                         Toast.makeText(this, "Update Succesfully", Toast.LENGTH_SHORT).show()
 
-                    }else{
+                    } else {
                         progressDialog?.dismiss()
                         dialog!!.dismiss()
-
                     }
                 }
                 is com.workseasy.com.network.DataState.Loading -> {
@@ -145,7 +139,6 @@ class QuotationActivity : AppCompatActivity() {
                     progressDialog?.dismiss()
                     Toast.makeText(this, ""+dataSate.exception, Toast.LENGTH_SHORT).show()
                     dialog!!.dismiss()
-
                 }
             }
         }
